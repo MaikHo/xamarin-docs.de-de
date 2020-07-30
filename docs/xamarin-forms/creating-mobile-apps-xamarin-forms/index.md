@@ -10,18 +10,18 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e38c319db0d0adf23a2ec0d328ccc3822e33f66d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de85e9108244230e9c0a740b1aa9140ecf92a033
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198282"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997396"
 ---
-# <a name="creating-mobile-apps-with-xamarinforms-book"></a>Buch über das Erstellen von mobilen Apps mit Xamarin.Forms
+# <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>Buch über das Erstellen von mobilen Apps mit Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<img src="images/cover-sml.png" title="Buch über das Erstellen von mobilen Apps mit Xamarin.Forms" align="left" />Das Buch über das *Erstellen von mobilen Apps mit Xamarin.Forms* von Charles Petzold ist ein Leitfaden, um sich mit der Anwendungsentwicklung mit Xamarin.Forms vertraut zu machen. Um mit diesem Buch arbeiten zu können, müssen Sie sich lediglich mit der Programmiersprache C# auskennen. Inhalt des Buchs ist u. a. eine umfangreiche Beschreibung der Xamarin.Forms-Benutzeroberfläche. Darüber hinaus werden Themen wie Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierte Renderer und vieles mehr besprochen.
+<img src="images/cover-sml.png" title="Buch über das Erstellen von mobilen Apps mit Xamarin.Forms" alt="Creating Mobile Apps with Xamarin.Forms Book" align="left" />Das Buch über das *Erstellen von mobilen Apps mit Xamarin.Forms* von Charles Petzold ist ein Leitfaden, um sich mit der Anwendungsentwicklung mit Xamarin.Forms vertraut zu machen. Um mit diesem Buch arbeiten zu können, müssen Sie sich lediglich mit der Programmiersprache C# auskennen. Inhalt des Buchs ist u. a. eine umfangreiche Beschreibung der Xamarin.Forms-Benutzeroberfläche. Darüber hinaus werden Themen wie Animation, MVVM, Trigger, Verhalten, benutzerdefinierte Layouts, benutzerdefinierte Renderer und vieles mehr besprochen.
 
 Das Buch wurde im Frühjahr 2016 veröffentlicht und seitdem nicht aktualisiert. Wenngleich ein großer Teil des Buchs weiterhin relevante Informationen liefert, sind einige [Abschnitte veraltet](#ways-in-which-the-book-is-outdated), und einige Themen sind nicht mehr korrekt oder vollständig.
 

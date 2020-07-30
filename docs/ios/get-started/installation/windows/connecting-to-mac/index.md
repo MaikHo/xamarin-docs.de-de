@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 81377d790d695b60465319aeb166eb1e62483211
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940934"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996946"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -176,9 +176,9 @@ Das Feature „Mit Mac koppeln“ überprüft, ob Mono installiert ist. Wenn die
 
 In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den folgenden Screenshots zu sehen (zum Vergrößern klicken):
 
-||Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
+|Mono|Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
 |---|---|---|---|
-|Mono|[![Mono-Installation fehlt](images/mono-missing.png "Mono-Installation fehlt")](images/mono-missing-large.png#lightbox)|[![Mono herunterladen](images/mono-downloading.png "Mono herunterladen")](images/mono-downloading-large.png#lightbox)|[![Mono installieren](images/mono-installing.png "Mono installieren")](images/mono-installing-large.png#lightbox)|
+||[![Mono-Installation fehlt](images/mono-missing.png "Mono-Installation fehlt")](images/mono-missing-large.png#lightbox)|[![Mono herunterladen](images/mono-downloading.png "Mono herunterladen")](images/mono-downloading-large.png#lightbox)|[![Mono installieren](images/mono-installing.png "Mono installieren")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,17 +192,17 @@ Das Feature „Mit Mac koppeln“ führt auf dem Mac für Xamarin.iOS ein Upgrad
 
 In mehreren Eingabeaufforderungen wird der Status angezeigt. Dies ist auf den folgenden Screenshots zu sehen (zum Vergrößern klicken):
 
-||Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
+|Xamarin.iOS|Überprüfung auf vorhandene Installation|Ausgeführter Downloadvorgang|Installation
 |---|---|---|---|
-|Xamarin.iOS|[![Xamarin.iOS-Installation fehlt](images/xamios-missing.png "Xamarin.iOS-Installation fehlt")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS herunterladen](images/xamios-downloading.png "Xamarin.iOS herunterladen")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS installieren](images/xamios-installing.png "Installieren von Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+||[![Xamarin.iOS-Installation fehlt](images/xamios-missing.png "Xamarin.iOS-Installation fehlt")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS herunterladen](images/xamios-downloading.png "Xamarin.iOS herunterladen")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS installieren](images/xamios-installing.png "Installieren von Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode-Tools und -Lizenz
 
 Das Feature „Mit Mac koppeln“ überprüft auch, ob Xcode installiert wurde und Sie der Lizenz zugestimmt haben. Obwohl das Feature Xcode nicht installiert, werden Sie dazu aufgefordert der Lizenz zuzustimmen. Dies ist auf den folgenden Screenshots zu sehen (zum Vergrößern klicken):
 
-||Überprüfung auf vorhandene Installation|Zustimmung zur Lizenz|
+|Xcode|Überprüfung auf vorhandene Installation|Zustimmung zur Lizenz|
 |---|---|---|
-|Xcode|[![Xcode-Installation fehlt](images/xcode-missing.png "Xcode-Installation fehlt")](images/xcode-missing-large.png#lightbox)|[![Xcode-Lizenz](images/xcode-license.png "Xcode-Lizenz")](images/xcode-license-large.png#lightbox)|
+||[![Xcode-Installation fehlt](images/xcode-missing.png "Xcode-Installation fehlt")](images/xcode-missing-large.png#lightbox)|[![Xcode-Lizenz](images/xcode-license.png "Xcode-Lizenz")](images/xcode-license-large.png#lightbox)|
 
 Zusätzlich installiert oder aktualisiert das Feature „Mit Mac koppeln“ verschiedene Pakete, die mit Xcode verteilt werden. Zum Beispiel:
 

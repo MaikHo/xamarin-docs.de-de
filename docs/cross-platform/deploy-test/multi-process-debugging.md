@@ -6,16 +6,16 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bdc5790133241ed30e903617541244a9d6ee06e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932521"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996577"
 ---
 # <a name="multi-process-debugging"></a>Debuggen mit mehreren Prozessen
 
-Es kommt sehr häufig vor, dass moderne, in Visual Studio für Mac entwickelte Projektmappen mehrere Projekte mit unterschiedlichen Zielplattformen umfassen. Eine Projektmappe kann beispielsweise ein Projekt für mobile Anwendungen enthalten, das sich auf die Daten stützt, die von einem Webdienstprojekt bereitgestellt werden. Beim Entwickeln dieser Projektmappe müssen möglicherweise beide Projekte gleichzeitig ausgeführt werden, damit der Entwickler Fehler beheben kann. Seit dem [Cycle 9-Release von Xamarin](https://releases.xamarin.com/stable-release-cycle-9/) kann Visual Studio für Mac mehrere Prozesse debuggen, die gleichzeitig ausgeführt werden. Dadurch können Breakpoints festgelegt, Variablen überprüft und Threads in mehreren aktiven Projekten angezeigt werden. Dies wird als _Debuggen mit mehreren Prozessen_ bezeichnet. 
+Es kommt sehr häufig vor, dass moderne, in Visual Studio für Mac entwickelte Projektmappen mehrere Projekte mit unterschiedlichen Zielplattformen umfassen. Eine Projektmappe kann beispielsweise ein Projekt für mobile Anwendungen enthalten, das sich auf die Daten stützt, die von einem Webdienstprojekt bereitgestellt werden. Beim Entwickeln dieser Projektmappe müssen möglicherweise beide Projekte gleichzeitig ausgeführt werden, damit der Entwickler Fehler beheben kann. Seit dem [Cycle 9-Release von Xamarin](https://releases.xamarin.com/stable-release-cycle-9/) kann Visual Studio für Mac mehrere Prozesse debuggen, die gleichzeitig ausgeführt werden. Dadurch können Breakpoints festgelegt, Variablen überprüft und Threads in mehreren aktiven Projekten angezeigt werden. Dies wird als _Debuggen mit mehreren Prozessen_ bezeichnet.
 
 Dieser Leitfaden enthält Informationen zu einigen an Visual Studio für Mac vorgenommenen Änderungen, um das Debuggen mehrerer Prozesse zu unterstützen. Er erläutert zudem die Konfiguration von Projektmappen zum Debuggen mehrerer Prozesse und das Anfügen an vorhandene Prozesse mit Visual Studio für Mac.
 
@@ -74,7 +74,7 @@ Beim Debuggen mehrerer Prozesse kann der aktive Thread über den **Thread-Pad** 
 
 Wenn zwei (oder mehr) Projekte Breakpoints aufweisen, hält Visual Studio für Mac die Prozesse an. Für Code kann nur im aktiven Thread der Befehl **Step Over** ausgeführt werden. Der andere Prozess wird so lange angehalten, bis eine Bereichsänderung ermöglicht, dass der Debugger den Fokus aus dem aktiven Thread wechseln kann. Betrachten Sie beispielsweise den folgenden Screenshot, auf dem Visual Studio für Mac zwei Projekte debuggt:
 
-![](multi-process-debugging-images/mpd09-xs.png  "Visual Studio for Mac debugging two projects")
+![Visual Studio für Mac: Debuggen zweier Projekte](multi-process-debugging-images/mpd09-xs.png)
 
 In diesem Screenshot verfügt jede Projektmappe über einen eigenen Breakpoint. Beim Starten des Debuggens wird der erste Breakpoint in **Zeile 10** von `MainClass` in **SecondProject** ermittelt. Da beide Projekte Breakpoints aufweisen, werden beide Prozesse angehalten. Sobald der Breakpoint erreicht wurde, bewirkt jedes Aufrufen von **Step Over**, dass Visual Studio für Mac Code im aktiven Thread schrittweise durchläuft.
 
@@ -92,7 +92,7 @@ Ein Prozess kann angehalten oder fortgesetzt werden, indem mit der rechten Maust
 
 Abhängig von dem Status der Projekte, die gedebuggt werden, ändert sich die Darstellung der Debug-Symbolleiste. Wenn mehrere Projekte ausgeführt werden, werden in der Debug-Symbolleiste sowohl die Schaltfläche **Anhalten** als auch die Schaltfläche **Fortsetzen** angezeigt, wenn mindestens ein Projekt ausgeführt wird und ein Projekt angehalten wurde:
 
-![](multi-process-debugging-images/mpd07-xs.png  "Debug toolbar")
+![Symbolleiste debuggen](multi-process-debugging-images/mpd07-xs.png)
 
 Durch Klicken auf die Schaltfläche **Anhalten** in der **Debug-Symbolleiste** werden alle Prozesse, die gedebuggt werden, angehalten. Entsprechend werden durch Klicken auf die Schaltfläche **Fortsetzen** alle angehaltenen Prozesse fortgesetzt.
 
@@ -100,7 +100,7 @@ Durch Klicken auf die Schaltfläche **Anhalten** in der **Debug-Symbolleiste** w
 
 Sobald das erste Projekt von Visual Studio für Mac gestartet wurde, kann auch das Debugging eines zweiten Projekts vorgenommen werden. Machen Sie nach dem Starten des ersten Projekts im *Lösungspad* einen ***Rechtsklick** auf das Projekt, und wählen Sie **Start Debugging Item** (Debugging des Elements starten) aus:
 
-![](multi-process-debugging-images/mpd13-xs.png  "Start Debugging Item")
+![„Start Debugging Item“ (Debugging des Elements starten)](multi-process-debugging-images/mpd13-xs.png)
 
 ## <a name="creating-a-solution-configuration"></a>Erstellen einer Projektmappenkonfiguration
 
@@ -114,7 +114,7 @@ So erstellen Sie eine neue Projektmappenkonfiguration in Xamaring Studio:
 
 2. Klicken Sie auf die Schaltfläche **Neu**, geben Sie den Namen der neuen Projektmappenkonfiguration ein, und klicken Sie anschließend auf **Erstellen**. Die neue Projektmappenkonfiguration erscheint im Fenster **Konfigurationen**:
 
-    ![](multi-process-debugging-images/mpd11-xs.png  "Naming a new solution configuration")
+    ![Eine neue Projektmappenkonfiguration benennen](multi-process-debugging-images/mpd11-xs.png)
 
 3. Wählen Sie die neue Laufzeitkonfiguration aus der Konfigurationsliste aus. Im Dialogfeld **Projektmappenoptionen** werden die einzelnen Projekte in der Projektmappe angezeigt. Haken Sie jedes Projekt ab, das beim Initiieren einer Debugsitzung gestartet werden sollte:
 
