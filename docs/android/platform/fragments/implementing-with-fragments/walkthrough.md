@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 56c9fc307166ec9c72ab6cb1f7a726c4cd12cb3e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027405"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997032"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>Exemplarische Vorgehensweise zu Fragmenten &ndash; Smartphone
 
-Dies ist der erste Teil einer exemplarischen Vorgehensweise, in der eine Xamarin.Android-App erstellt wird, die ein Android-Gerät in Hochformat als Ziel verwendet. In dieser exemplarischen Vorgehensweise wird erläutert, wie Fragmente in Xamarin.Android erstellt werden und wie diese einem Beispiel hinzugefügt werden.
+Dies ist der erste Teil einer exemplarischen Vorgehensweise, in der eine Xamarin.Android-App erstellt wird, die ein Android-Gerät im Hochformat als Ziel verwendet. In dieser exemplarischen Vorgehensweise wird erläutert, wie Fragmente in Xamarin.Android erstellt werden und wie diese einem Beispiel hinzugefügt werden.
 
-[![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
+[![App-Screenshot der exemplarischen Vorgehensweise](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
 Die folgenden Klassen werden für diese App erstellt:
 

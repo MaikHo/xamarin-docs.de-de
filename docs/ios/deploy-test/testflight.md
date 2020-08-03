@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997487"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -75,8 +75,8 @@ Weitere Informationen zum Erstellen eines neuen iTunes Connect-Datensatzes finde
 
 Das Formular sollte genau die gleichen Informationen in der„Info.plist“-Datei Ihrer App wiedergeben, wie unten gezeigt:
 
-[![](testflight-images/infoplist.png "„Info.plist“-Datei der App")](testflight-images/infoplist.png#lightbox)
-[![Formular in iTunes Connect](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
+[![Die Datei „Info.plist“ der App](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox)
+[![Das Formular in iTunes Connect](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **Name**: Der beschreibende Name, der beim Einrichten des App Bundles verwendet wird. Diese Angabe muss genau mit dem **Anwendungsnamen**-Eintrag in Ihrer `Info.plist` übereinstimmen.
 - **Primary Language** (Primäre Sprache): Die Basissprache, die innerhalb der App verwendet wird. Dies ist normalerweise irgendeine von Ihnen gesprochene Sprache.
@@ -227,7 +227,7 @@ Sie können jetzt beginnen, Einladungen vorzubereiten und über die Registerkart
 
 Wenn Sie eine große Anzahl von externen Testern haben, können Sie den **Importdatei**-Link zum Importieren einer `CSV`-Datei verwenden, mit dem folgenden Format pro Zeile:
 
-``` 
+```
 first name, last name, email address
 ```
 

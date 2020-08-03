@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938748"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997344"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
 
@@ -67,7 +67,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
 8. Doppelklicken Sie auf die **Titel**-Leiste des **Phoneword**-Bildschirms, und ändern Sie den **Titel** in **Phoneword**:
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
+    ![Ändern des Titels in „Phoneword“](hello-ios-multiscreen-quickstart-images/09.png)
 
 9. Ziehen Sie aus der **Toolbox** eine **Schaltfläche**, und platzieren Sie sie unterhalb der **Anruf-Schaltfläche**. Ziehen Sie die Ziehpunkte der neuen **Schaltfläche** auf die gleiche Breite wie die **Anruf-Schaltfläche**:
 
@@ -90,7 +90,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
     ![Im Lösungspad wird die Datei „CallHistoryController.cs“ angezeigt.](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. Doppelklicken Sie auf die Datei **CallHistoryController.cs**, um sie öffnen. Ersetzen Sie den Inhalt durch den folgenden Code:
-    
+
     ```csharp
     using System;
     using Foundation;
@@ -314,7 +314,7 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
 10. Ändern Sie im **Eigenschaften-Explorer** den **Namen** der **Schaltfläche** in `CallHistoryButton`, und ändern Sie den **Titel** in **Anrufliste**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
+    ![Ändern des Namens der Schaltfläche in „CallHistoryButton“ und des Titels in „Call History“ (Anrufliste)](hello-ios-multiscreen-quickstart-images/image9.png)
 
 11. Erstellen Sie den Bildschirm **Anrufliste**. Ziehen Sie aus der **Toolbox** einen **Tabellenansichtscontroller** in die Entwurfsoberfläche:
 

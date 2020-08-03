@@ -10,14 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
+ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937695"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113812"
 ---
-# <a name="xamarinforms-twopaneview-layout"></a>TwoPaneView-Layout von Xamarin.Forms
+# <a name="no-locxamarinforms-twopaneview-layout"></a>TwoPaneView-Layout von Xamarin.Forms
 
 ![Vorabrelease der API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
@@ -77,8 +77,8 @@ Die folgenden Eigenschaften werden angewendet, wenn `TwoPaneView` auf einem einz
 
 Die folgenden Eigenschaften werden angewendet, wenn `TwoPaneView` auf einem einzelnen Bildschirm oder auf zwei Bildschirmen verwendet wird:
 
-- `TallModeConfiguration`: Im Tall-Modus gibt diese Eigenschaft an, welcher Bereich links und welcher rechts angeordnet ist oder, falls von TwoPaneViewPriority so definiert, ob nur ein einzelner Bereich angezeigt werden soll.
-- `WideModeConfiguration`: Im Wide-Modus gibt diese Eigenschaft an, welcher Bereich oben und welcher unten angeordnet ist oder, falls von TwoPaneViewPriority so definiert, ob nur ein einzelner Bereich angezeigt werden soll.
+- `TallModeConfiguration`: Im Tall-Modus gibt diese Eigenschaft an, welcher Bereich oben und welcher unten angeordnet wird. Sie können in „TwoPaneViewPriority“ auch definieren, dass nur ein einzelner Bereich angezeigt werden soll.
+- `WideModeConfiguration`: Im Wide-Modus gibt diese Eigenschaft an, welcher Bereich links und welcher rechts angeordnet wird. Sie können in „TwoPaneViewPriority“ auch definieren, dass nur ein einzelner Bereich angezeigt werden soll.
 - `PanePriority`: Diese Eigenschaft gibt an, ob im SinglePane-Modus Pane1 oder Pane2 angezeigt werden soll.
 
 ## <a name="related-links"></a>Verwandte Links

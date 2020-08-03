@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9b4b74b3dbde34cb94b2ce3b104b2b5a4e1abe21
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303475"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996889"
 ---
-# <a name="platform-features"></a>Plattformfeatures
+# <a name="xamarinandroid-platform-features"></a>Xamarin.Android-Plattformfeatures
 
 _In den Dokumenten dieses Abschnitts werden die spezifischen Features von Android behandelt. Hier finden Sie Themen wie z. B. das Verwenden von Fragmenten, das Arbeiten mit Karten und das Kapseln von Daten mit Inhaltsanbietern._
 
