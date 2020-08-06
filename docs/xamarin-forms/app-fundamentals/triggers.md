@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
+ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936473"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795993"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
+# <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -276,7 +276,7 @@ Sie können die *beiden* Eigenschaften `EnterActions` und `ExitActions` sowie `S
         <Trigger TargetType="Entry"
                  Property="Entry.IsFocused" Value="True">
             <Trigger.EnterActions>
-                <local:FadeTriggerAction StartsFrom="0"" />
+                <local:FadeTriggerAction StartsFrom="0" />
             </Trigger.EnterActions>
 
             <Trigger.ExitActions>
@@ -319,7 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>Zustandstrigger
 
-Zustandstrigger sind spezialisierte Trigger, die die Bedingungen definieren, bei denen [`VisualState`](xref:Xamarin.Forms.VisualState) angewendet werden muss. 
+Zustandstrigger sind spezialisierte Trigger, die die Bedingungen definieren, bei denen [`VisualState`](xref:Xamarin.Forms.VisualState) angewendet werden muss.
 
 Zustandstrigger werden der Sammlung [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) eines [`VisualState`](xref:Xamarin.Forms.VisualState) hinzugefügt. Diese Sammlung kann Trigger mit einem oder mehreren Zustandstriggern enthalten. Ein [`VisualState`](xref:Xamarin.Forms.VisualState) wird angewendet, wenn alle Zustandstrigger in der Sammlung aktiv sind.
 

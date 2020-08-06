@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms Tabbedpage" description: "Die „TabbedPage“-Klasse von Xamarin.Forms besteht aus einer Liste mit Registerkarten und einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich.'
-description: 'In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Sammlung von Seiten navigieren können." ms.prod: xamarin ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/07/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 'Xamarin.Forms: TabbedPage'
+description: Die „TabbedPage“-Klasse von Xamarin.Forms besteht aus einer Liste mit Registerkarten und einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können.
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137513"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426876"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
@@ -33,7 +33,7 @@ Unter iOS wird die Liste der Registerkarten am unteren Rand des Bildschirms ange
 Unter Android wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte besteht aus einem Titel und einem Symbol, bei dem es sich um eine PNG-Datei mit einem Alphakanal handeln sollte. Die Registerkarten können jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Wenn mehr als fünf Registerkarten vorhanden sind und die Registerkartenliste sich am unteren Rand des Bildschirms befindet, wird eine Registerkarte *More* (Weitere) angezeigt, die für den Zugriff auf zusätzliche Registerkarten verwendet werden kann. Weitere Informationen zu den Symbolanforderungen finden Sie unter [Tabs](https://material.io/components/tabs/#) (Registerkarten) auf material.io und [Support different pixel densities](https://developer.android.com/training/multiscreen/screendensities) (Unterstützung verschiedener Pixeldichten) auf developer.android.com. Weitere Informationen zum Verschieben der Registerkarten an den unteren Bildschirmrand finden Sie unter [Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md) (Festlegen der TabbedPage-Symbolleistenanordnung und -farbe).
 
 > [!TIP]
-> Die `TabbedPageRenderer`-Klasse von AppCompat unter Android enthält eine überschreibbare `GetIconDrawable`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand. Alternativ kann die überschreibbare `SetTabIcon`-Methode verwendet werden, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse für Registerkartenleisten am oberen Rand zu laden.
+> Die `TabbedPageRenderer`-Klasse von AppCompat unter Android enthält eine überschreibbare `SetTabIconImageSource`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand.
 
 Auf der universellen Windows-Plattform (UWP) wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte umfasst einen Titel. Den Registerkarten können allerdings mit einem plattformspezifischen Element Symbole hinzugefügt werden. Weitere Informationen finden Sie unter [TabbedPage Icons on Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md) (TabbedPage-Symbole unter Windows).
 

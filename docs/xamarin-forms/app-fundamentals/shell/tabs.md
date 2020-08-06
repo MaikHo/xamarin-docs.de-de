@@ -10,14 +10,14 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139957"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426889"
 ---
-# <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -268,7 +268,7 @@ In einer Shell-Anwendung wird jedes [`ContentPage`](xref:Xamarin.Forms.ContentPa
 </Shell>
 ```
 
-Mit dieser XAML wird `CatsPage` erstellt und angezeigt, da sie das erste Element des im `Shell`-Objekt mit Unterklassen deklarierten Inhalts ist. `CatsPage` und `MonkeysPage` können über die unteren Registerkarten aufgerufen werden, und diese Seiten werden nur erstellt, wenn der Benutzer zu ihnen navigiert. Der Vorteil dieses Ansatzes besteht darin, dass die schlechte Starterfahrung vermieden wird, da Seiten bei Bedarf als Reaktion auf die Navigation und nicht beim Starten der Anwendung erstellt werden.
+Mit dieser XAML wird `CatsPage` erstellt und angezeigt, da sie das erste Element des im `Shell`-Objekt mit Unterklassen deklarierten Inhalts ist. `DogsPage` und `MonkeysPage` können über die unteren Registerkarten aufgerufen werden, und diese Seiten werden nur erstellt, wenn der Benutzer zu ihnen navigiert. Der Vorteil dieses Ansatzes besteht darin, dass die schlechte Starterfahrung vermieden wird, da Seiten bei Bedarf als Reaktion auf die Navigation und nicht beim Starten der Anwendung erstellt werden.
 
 ## <a name="tab-appearance"></a>Registerkartendarstellung
 
