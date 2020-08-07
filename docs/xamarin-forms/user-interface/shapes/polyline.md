@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2f00daff6cada3f74b2dbcf6daa8245b80cf13eb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b7e6404dec40814b800aef696afd058cafb69e5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937656"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918359"
 ---
-# <a name="xamarinforms-shapes-polyline"></a>Xamarin.FormsFormen: Polyline
+# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.FormsFormen: Polyline
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Polyline` -Klasse wird von der `Shape` -Klasse abgeleitet und kann verwendet werden, um eine Reihe verbundener gerader Linien zu zeichnen. Ein Polylinie ähnelt einem Polygon, mit dem Unterschied, dass der letzte Punkt in einer Polylinie nicht mit dem ersten Punkt verbunden ist. Informationen zu den Eigenschaften, die die `Polyline` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -47,7 +47,8 @@ Das folgende XAML-Beispiel zeigt, wie Sie eine Polylinie zeichnen:
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
-          Stroke="Red" />
+          Stroke="Red"
+          StrokeThickness="1" />
 ```
 
 In diesem Beispiel wird ein rotes Polylinie gezeichnet:

@@ -6,18 +6,18 @@ ms.prod: xamarin
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/17/2020
+ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
-ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
+ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100182"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918097"
 ---
-# <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
+# <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
@@ -26,9 +26,6 @@ Geräte enthalten in der Regel helle und dunkle Designs, die jeweils auf eine Vi
 Abhängig von der Gerätekonfiguration kann sich das Systemdesign aus verschiedenen Gründen ändern. Dies schließt das Systemdesign ein, das explizit vom Benutzer geändert wird, da es sich aufgrund der Tageszeit geändert hat und sich aufgrund von Umgebungsfaktoren (z. b. niedriger Beleuchtung) ändert.
 
 Xamarin.FormsAnwendungen können auf Systemdesign Änderungen reagieren, indem Sie Ressourcen mit der `AppThemeBinding` Markup Erweiterung und die `SetAppThemeColor` -und- `SetOnAppTheme<T>` Erweiterungs Methoden nutzen.
-
-> [!IMPORTANT]
-> Die Reaktion auf eine Systemdesign Änderung ist derzeit experimentell und kann nur verwendet werden, indem das-Flag festgelegt wird `AppTheme_Experimental` . Weitere Informationen finden Sie unter [experimentelle Flags](~/xamarin-forms/internals/experimental-flags.md).
 
 Die folgenden Anforderungen müssen erfüllt sein, damit auf Xamarin.Forms eine Systemdesign Änderung reagiert:
 
@@ -166,5 +163,5 @@ Das- `AppThemeChangedEventArgs` Objekt, das das- `RequestedThemeChanged` Ereigni
 
 - [Systemdesigns (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [Markuperweiterung AppThemeBinding](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

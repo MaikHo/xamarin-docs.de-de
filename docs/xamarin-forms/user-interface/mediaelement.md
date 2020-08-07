@@ -10,18 +10,18 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f1a015784dd87bc4c6da7daf99a6e463c1e65e5c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4a8ca74fc12b59100cc60b72d3c2287cffadfd18
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937162"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918114"
 ---
-# <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMedia Element
+# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.FormsMedia Element
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement)ist eine Ansicht für die Wiedergabe von Video-und Audiodaten. Medien, die von der zugrunde liegenden Plattform unterstützt werden, können aus den folgenden Quellen wiedergegeben werden:
 

@@ -10,23 +10,24 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 971cf76fece1ea9b0744052eb23e696d02ce0bc1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8250bd5e5f7d6c9cb93a986656e908b40cec9ae2
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937734"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918512"
 ---
-# <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
+# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Formsmit der Pfad Markup Syntax können Sie Pfadgeometrien in XAML kompakt angeben. Die Syntax wird als Zeichen folgen Wert für die- `Path.Data` Eigenschaft angegeben:
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 

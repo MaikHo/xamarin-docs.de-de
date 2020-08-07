@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91960c08640a412e02298ed051469a86c1a9f368
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930571"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918495"
 ---
-# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.FormsFormen: Rechteck
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.FormsFormen: Rechteck
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 

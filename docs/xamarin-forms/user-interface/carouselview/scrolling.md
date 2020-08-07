@@ -10,18 +10,18 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5c15760919c2511ee24485ab7539463ec252d999
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929215"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918140"
 ---
-# <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselview-Bildlauf
+# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselview-Bildlauf
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert die folgenden scrollbezogenen Eigenschaften:
 

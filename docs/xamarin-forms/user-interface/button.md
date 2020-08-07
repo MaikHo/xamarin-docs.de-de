@@ -6,20 +6,20 @@ ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 595367d94bcc4ac384763e915a0a19db7517341d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7ed24d38c75036245a024eecbef7f9a74380b591
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917886"
 ---
-# <a name="xamarinforms-button"></a>Xamarin.FormsGedrückt
+# <a name="no-locxamarinforms-button"></a>Xamarin.FormsGedrückt
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _Die Schaltfläche antwortet auf eine Tap-oder Klick-Schaltfläche, die eine Anwendung anweist, eine bestimmte Aufgabe auszuführen._
 
@@ -426,7 +426,8 @@ Das `Button` erbt oder definiert mehrere Eigenschaften, die sich auf seine Darst
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)Gibt an, ob der Text kursiv oder fett formatiert ist.
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)die Breite des Rahmens.
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius)ist der Eckradius des`Button`
-- `CharacterSpacing`der Abstand zwischen den Zeichen des Texts. `Button`
+- [`CharacterSpacing`](xref:Xamarin.Forms.Button.CharacterSpacing)der Abstand zwischen den Zeichen des Texts `Button` .
+- `TextTransform`bestimmt die Groß-/Kleinschreibung des Texts `Button` .
 
 > [!NOTE]
 > Die `Button` -Klasse verfügt auch über [`Margin`](xref:Xamarin.Forms.View.Margin) -und- [`Padding`](xref:Xamarin.Forms.Button.Padding) Eigenschaften, die das Layoutverhalten von Steuern `Button` . Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).

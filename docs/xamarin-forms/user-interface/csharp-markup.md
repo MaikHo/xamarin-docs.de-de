@@ -10,18 +10,18 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936031"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918560"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen. Die von c#-Markup bereitgestellte fließende API ist im- `Xamarin.Forms.Markup` Namespace verfügbar.
 
@@ -235,7 +235,7 @@ Da eine Gestenerkennung eine ist `BindableObject` , können Sie die `Bind` -und-
 
 C#-Markup umfasst eine Reihe von layouterweiterungsmethoden, die das Positionieren von Sichten in Layouts und den Inhalt in Sichten unterstützen:
 
-| Typ | Erweiterungsmethoden |
+| type | Erweiterungsmethoden |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -253,7 +253,7 @@ Um den korrekten Satz von linken und rechten Erweiterungs Methoden verfügbar zu
 
 Für c#-Markup, das sowohl von links nach rechts und von rechts nach links Fluss Richtung unterstützt werden soll, empfiehlt es sich, die Erweiterungs Methoden in der folgenden Tabelle anstelle eines der obigen Namespaces zu verwenden:
 
-| Typ | Erweiterungsmethoden |
+| type | Erweiterungsmethoden |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |

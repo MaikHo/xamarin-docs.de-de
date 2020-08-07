@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937608"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918248"
 ---
-# <a name="xamarinforms-shapes-path"></a>Xamarin.FormsFormen: Pfad
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.FormsFormen: Pfad
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Path` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Kurven und komplexen Formen verwendet werden. Diese Kurven und Formen werden oft mithilfe von `Geometry` Objekten beschrieben. Informationen zu den Eigenschaften, die die `Path` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -48,6 +48,7 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein Dreieck mithilfe der Pfad Markup S
 ```xaml
 <Path Data="M 10,100 L 100,100 100,50Z"
       Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start" />
 ```
@@ -71,6 +72,7 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein Dreieck mithilfe eines- `PathGeome
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>

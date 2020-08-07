@@ -6,28 +6,24 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136200"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918234"
 ---
-# <a name="xamarinforms-entry"></a>Xamarin.FormsEin
+# <a name="no-locxamarinforms-entry"></a>Xamarin.FormsEin
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-
-_Einzeilige Text-oder Kenn Wort Eingabe_
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 Der Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) wird für einzeilige Texteingaben verwendet. `Entry`Unterstützt wie die- [`Editor`](xref:Xamarin.Forms.Editor) Sicht mehrere Tastaturtypen. Außerdem `Entry` kann als Kennwort verwendet werden.
 
-## <a name="display-customization"></a>Anpassung anzeigen
-
-### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
+## <a name="set-and-read-text"></a>Festlegen und Lesen von Text
 
 Die `Entry` -Eigenschaft wird wie bei anderen Text dargestellten Sichten von verfügbar gemacht [`Text`](xref:Xamarin.Forms.InputView.Text) . Diese Eigenschaft kann verwendet werden, um den von dargestellten Text festzulegen und zu lesen `Entry` . Im folgenden Beispiel wird veranschaulicht, wie die- `Text` Eigenschaft in XAML festgelegt wird:
 
@@ -47,7 +43,7 @@ Um Text zu lesen, greifen Sie `Text` in c# auf die-Eigenschaft zu:
 var text = MyEntry.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>Festlegen von Platzhalter Text
+## <a name="set-placeholder-text"></a>Platzhalter Text festlegen
 
 [`Entry`](xref:Xamarin.Forms.Entry)Kann so festgelegt werden, dass Platzhalter Text angezeigt wird, wenn keine Benutzereingaben gespeichert werden. Dies wird erreicht, indem die [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) -Eigenschaft auf festgelegt wird `string` und häufig verwendet wird, um den Typ des Inhalts anzugeben, der für geeignet ist `Entry` . Außerdem kann die Platzhalter Textfarbe gesteuert werden, indem die-Eigenschaft auf festgelegt wird [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) [`Color`](xref:Xamarin.Forms.Color) :
 
@@ -62,7 +58,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > Die Breite eines kann definiert werden, indem die zugehörige- `Entry` Eigenschaft festgelegt wird `WidthRequest` . Hängt nicht von der Breite einer ab `Entry` , die basierend auf dem Wert der zugehörigen- `Text` Eigenschaft definiert wird.
 
-### <a name="preventing-text-entry"></a>Verhindern von Texteinträgen
+## <a name="prevent-text-entry"></a>Text Eintrag verhindern
 
 Benutzer können daran gehindert werden, den Text in einer [`Entry`](xref:Xamarin.Forms.Entry) zu ändern, indem Sie die-Eigenschaft mit dem `IsReadOnly` Standardwert `false` auf festlegen `true` :
 
@@ -78,7 +74,33 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 > [!NOTE]
 > Die- `IsReadonly` Eigenschaft ändert nicht die visuelle Darstellung eines [`Entry`](xref:Xamarin.Forms.Entry) , anders als die- `IsEnabled` Eigenschaft, die auch die visuelle Darstellung von `Entry` in grau ändert.
 
-### <a name="limiting-input-length"></a>Einschränken der Eingabe Länge
+## <a name="transform-text"></a>Transformieren von Text
+
+Ein- [`Entry`](xref:Xamarin.Forms.Entry) Objekt kann die Schreibweise seines Texts, der in der-Eigenschaft gespeichert ist, Transformieren `Text` , indem die- `TextTransform` Eigenschaft auf einen Wert der-Enumeration festgelegt wird `TextTransform` . Diese Enumeration hat vier Werte:
+
+- `None`Gibt an, dass der Text nicht transformiert wird.
+- `Default`Gibt an, dass das Standardverhalten für die Plattform verwendet wird. Dies ist der Standardwert der `TextTransform`-Eigenschaft.
+- `Lowercase`Gibt an, dass der Text in Kleinbuchstaben umgewandelt wird.
+- `Uppercase`Gibt an, dass der Text in Großbuchstaben umgewandelt wird.
+
+Im folgenden Beispiel wird gezeigt, wie Text in Großbuchstaben umgewandelt wird:
+
+```xaml
+<Entry Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+Entry entry = new Entry
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
+
+## <a name="limit-input-length"></a>Eingabe Länge begrenzen
 
 Die [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschaft kann verwendet werden, um die für zulässige Eingabe Länge einzuschränken [`Entry`](xref:Xamarin.Forms.Entry) . Diese Eigenschaft sollte auf eine positive ganze Zahl festgelegt werden:
 
@@ -92,7 +114,7 @@ var entry = new Entry { ... MaxLength = 10 };
 
 Ein [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschafts Wert von 0 gibt an, dass keine Eingabe zulässig ist, und der Wert `int.MaxValue` , der der Standardwert für ein ist [`Entry`](xref:Xamarin.Forms.Entry) , gibt an, dass die Anzahl der Zeichen, die eingegeben werden können, nicht wirksam ist.
 
-### <a name="character-spacing"></a>Zeichenabstand
+## <a name="character-spacing"></a>Zeichenabstand
 
 Der Zeichenabstand kann auf ein angewendet werden, [`Entry`](xref:Xamarin.Forms.Entry) indem die- `Entry.CharacterSpacing` Eigenschaft auf einen Wert festgelegt wird `double` :
 
@@ -112,7 +134,7 @@ Das Ergebnis ist, dass Zeichen im Text, die von angezeigt [`Entry`](xref:Xamarin
 > [!NOTE]
 > Der `CharacterSpacing` -Eigenschafts Wert wird auf den Text angewendet, der von den `Text` Eigenschaften und angezeigt wird `Placeholder` .
 
-### <a name="password-fields"></a>Kenn Wort Felder
+## <a name="password-fields"></a>Kenn Wort Felder
 
 `Entry`stellt die- `IsPassword` Eigenschaft bereit. Wenn `IsPassword` `true` den Wert hat, wird der Inhalt des Felds als schwarze Kreise angezeigt:
 
@@ -146,7 +168,7 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![Eintrag IsPassword und Platzhalter Beispiel](entry-images/passwordplaceholder.png)
 
-### <a name="setting-the-cursor-position-and-text-selection-length"></a>Festlegen der Cursor Position und der Text Auswahl Länge
+## <a name="set-the-cursor-position-and-text-selection-length"></a>Festlegen der Cursorposition und der Textauswahl Länge
 
 Die- [`CursorPosition`](xref:Xamarin.Forms.Entry.CursorPosition) Eigenschaft kann verwendet werden, um die Position zurückzugeben oder festzulegen, an der das nächste Zeichen in die in der-Eigenschaft gespeicherte Zeichenfolge eingefügt wird [`Text`](xref:Xamarin.Forms.InputView.Text) :
 
@@ -172,7 +194,7 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 
 Der Standardwert der- [`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength) Eigenschaft ist 0 (null), was bedeutet, dass kein Text ausgewählt ist.
 
-### <a name="displaying-a-clear-button"></a>Anzeigen einer Schaltfläche "Löschen"
+## <a name="display-a-clear-button"></a>Schaltfläche "Löschen" anzeigen
 
 Die- `ClearButtonVisibility` Eigenschaft kann verwendet werden, um zu steuern, ob ein [`Entry`](xref:Xamarin.Forms.Entry) eine Schaltfläche Löschen anzeigt, die dem Benutzer ermöglicht, den Text zu löschen. Diese Eigenschaft sollte auf einen- `ClearButtonVisibility` Enumerationsmember festgelegt werden:
 
@@ -196,7 +218,7 @@ Die folgenden Screenshots zeigen eine, [`Entry`](xref:Xamarin.Forms.Entry) bei d
 
 ![Screenshot eines Eintrags mit der Schaltfläche "Clear" unter IOS und Android](entry-images/entry-clear-button.png)
 
-### <a name="customizing-the-keyboard"></a>Anpassen der Tastatur
+## <a name="customize-the-keyboard"></a>Anpassen der Tastatur
 
 Die Tastatur, die angezeigt wird, wenn Benutzer mit einer interagieren [`Entry`](xref:Xamarin.Forms.Entry) , kann Programm gesteuert über die- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) Eigenschaft auf eine der folgenden Eigenschaften der-Klasse festgelegt werden [`Keyboard`](xref:Xamarin.Forms.Keyboard) :
 
@@ -255,7 +277,7 @@ var entry = new Entry { Placeholder = "Enter text here" };
 entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-#### <a name="customizing-the-return-key"></a>Anpassen der Rückgabetaste
+### <a name="customize-the-return-key"></a>Anpassen der Rückgabetaste
 
 Die Darstellung der Rückgabetaste auf der Soft Tastatur, die angezeigt wird, wenn eine [`Entry`](xref:Xamarin.Forms.Entry) den Fokus besitzt, kann angepasst werden, indem die- [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`ReturnType`](xref:Xamarin.Forms.ReturnType) :
 
@@ -283,7 +305,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 Wenn die Rückgabetaste gedrückt wird, [`Completed`](xref:Xamarin.Forms.Entry.Completed) wird das-Ereignis ausgelöst, und alle `ICommand` durch die-Eigenschaft angegebenen werden [`ReturnCommand`](xref:Xamarin.Forms.Entry.ReturnCommand) ausgeführt. Außerdem werden alle, `object` die durch die-Eigenschaft angegeben werden, [`ReturnCommandParameter`](xref:Xamarin.Forms.Entry.ReturnCommandParameter) `ICommand` als Parameter an übergeben. Weitere Informationen zu Befehlen finden Sie unter [The Xamarin.Forms Command Interface (Die Xamarin.Forms-Befehlsschnittstelle)](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
-### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+## <a name="enable-and-disable-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
 
 Die- [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob die Rechtschreibprüfung aktiviert ist. Standardmäßig ist die-Eigenschaft auf festgelegt `true` . Wenn der Benutzer Text eingibt, werden falsche Schreibweisen angegeben.
 
@@ -300,7 +322,7 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > Wenn die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf festgelegt ist `false` und eine benutzerdefinierte Tastatur nicht verwendet wird, wird die native Rechtschreibprüfung deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Rechtschreibprüfung deaktiviert (z. b.), [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat) wird die- `IsSpellCheckEnabled` Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Rechtschreibprüfung für einen zu aktivieren `Keyboard` , der diese explizit deaktiviert.
 
-### <a name="enabling-and-disabling-text-prediction"></a>Aktivieren und Deaktivieren der Textvorhersage
+## <a name="enable-and-disable-text-prediction"></a>Aktivieren und Deaktivieren der Text Vorhersage
 
 Die [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) -Eigenschaft steuert, ob die Text Vorhersage und die automatische Textkorrektur aktiviert ist. Standardmäßig ist die-Eigenschaft auf festgelegt `true` . Wenn der Benutzer Text eingibt, werden Word-Vorhersagen angezeigt.
 
@@ -317,7 +339,7 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > Wenn die [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) -Eigenschaft auf festgelegt ist `false` und keine benutzerdefinierte Tastatur verwendet wird, werden die Text Vorhersage und die automatische Textkorrektur deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Text Vorhersage deaktiviert, wird die- `IsTextPredictionEnabled` Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht zum Aktivieren der Text Vorhersage für einen verwendet werden, der diese `Keyboard` explizit deaktiviert.
 
-### <a name="colors"></a>Farben
+## <a name="colors"></a>Farben
 
 Der Eintrag kann so festgelegt werden, dass benutzerdefinierte Hintergrund-und Textfarben über die folgenden bindbaren Eigenschaften verwendet werden:
 
@@ -425,7 +447,7 @@ var entry = new Entry ();
 entry.TextChanged += Entry_TextChanged;
 ```
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Entry-API](xref:Xamarin.Forms.Entry)

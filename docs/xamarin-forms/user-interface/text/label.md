@@ -6,22 +6,22 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/09/2020
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570504"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917872"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.FormsETI
+# <a name="no-locxamarinforms-label"></a>Xamarin.FormsETI
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Anzeigen von Text in xamarin. Forms_
+_Text anzeigen inXamarin.Forms_
 
 Die [`Label`](xref:Xamarin.Forms.Label) Sicht wird zum Anzeigen von Text verwendet, sowohl für einzelne als auch für mehrere Zeilen. Bezeichnungen können Text Dekorationen und farbige Text enthalten und benutzerdefinierte Schriftarten (Familien, Größen und Optionen) verwenden.
 
@@ -55,6 +55,32 @@ Die folgenden Screenshots zeigen die `TextDecorations` auf-Instanzen angewendete
 
 > [!NOTE]
 > Text Dekorationen können auch auf-Instanzen angewendet werden [`Span`](xref:Xamarin.Forms.Span) . Weitere Informationen zur- `Span` Klasse finden Sie unter [formatierten Text](#formatted-text).
+
+## <a name="transform-text"></a>Transformieren von Text
+
+Ein [`Label`](xref:Xamarin.Forms.Entry) kann die Schreibweise des Texts, der in der-Eigenschaft gespeichert ist, transformieren, `Text` indem die- `TextTransform` Eigenschaft auf einen Wert der-Enumeration festgelegt wird `TextTransform` . Diese Enumeration hat vier Werte:
+
+- `None`Gibt an, dass der Text nicht transformiert wird.
+- `Default`Gibt an, dass das Standardverhalten für die Plattform verwendet wird. Dies ist der Standardwert der `TextTransform`-Eigenschaft.
+- `Lowercase`Gibt an, dass der Text in Kleinbuchstaben umgewandelt wird.
+- `Uppercase`Gibt an, dass der Text in Großbuchstaben umgewandelt wird.
+
+Im folgenden Beispiel wird gezeigt, wie Text in Großbuchstaben umgewandelt wird:
+
+```xaml
+<Label Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+Label label = new Label
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
 
 ## <a name="character-spacing"></a>Zeichenabstand
 
@@ -143,7 +169,7 @@ Die folgenden Screenshots zeigen das Ergebnis der Einstellung der- `TextColor` E
 
 Weitere Informationen zu Farben finden Sie unter [Farben](~/xamarin-forms/user-interface/colors.md).
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 Weitere Informationen zum Angeben von Schriftarten auf einem `Label` finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
 
@@ -390,7 +416,7 @@ Die folgenden Screenshots zeigen das Ergebnis der Einstellung der- [`Span.LineHe
 
 ![Span LineHeight-Beispiel](label-images/span-lineheight.png)
 
-## <a name="padding"></a>Abstand
+## <a name="padding"></a>Auffüllen
 
 Padding stellt den Leerraum zwischen einem Element und seinen untergeordneten Elementen dar und wird verwendet, um das Element vom eigenen Inhalt zu trennen. Auffüll Zeichen können auf-Instanzen angewendet werden, [`Label`](xref:Xamarin.Forms.Label) indem die- `Label.Padding` Eigenschaft auf einen Wert festgelegt wird [`Thickness`](xref:Xamarin.Forms.Thickness) :
 

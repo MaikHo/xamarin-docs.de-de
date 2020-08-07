@@ -6,31 +6,24 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 36f4946ffc6d5a42e1997f389501f921449d0259
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a7dedad6fc33b75a687f94897b64d04a72a0b08
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937591"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918434"
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms Editor
+# <a name="no-locxamarinforms-editor"></a>Xamarin.Forms Editor
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Mehrzeilige Texteingabe_
+Das- [`Editor`](xref:Xamarin.Forms.Editor) Steuerelement wird verwendet, um mehrzeilige Eingaben zu akzeptieren.
 
-Das- [`Editor`](xref:Xamarin.Forms.Editor) Steuerelement wird verwendet, um mehrzeilige Eingaben zu akzeptieren. In diesem Artikel wird Folgendes behandelt:
-
-- **[Anpassung](#customization)** &ndash; Tastatur-und Farboptionen.
-- **[Interaktivität](#interactivity)** &ndash; Ereignisse, die überwacht werden können, um Interaktivität bereitzustellen.
-
-## <a name="customization"></a>Anpassung
-
-### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
+## <a name="set-and-read-text"></a>Festlegen und Lesen von Text
 
 Die [`Editor`](xref:Xamarin.Forms.Editor) -Eigenschaft wird wie bei anderen Text dargestellten Sichten von verfügbar gemacht `Text` . Diese Eigenschaft kann verwendet werden, um den von dargestellten Text festzulegen und zu lesen `Editor` . Im folgenden Beispiel wird veranschaulicht, wie die- `Text` Eigenschaft in XAML festgelegt wird:
 
@@ -50,7 +43,7 @@ Um Text zu lesen, greifen Sie `Text` in c# auf die-Eigenschaft zu:
 var text = MyEditor.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>Festlegen von Platzhalter Text
+## <a name="set-placeholder-text"></a>Platzhalter Text festlegen
 
 [`Editor`](xref:Xamarin.Forms.Editor)Kann so festgelegt werden, dass Platzhalter Text angezeigt wird, wenn keine Benutzereingaben gespeichert werden. Dies wird erreicht, indem die [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) -Eigenschaft auf festgelegt wird `string` und häufig verwendet wird, um den Typ des Inhalts anzugeben, der für geeignet ist `Editor` . Außerdem kann die Platzhalter Textfarbe gesteuert werden, indem die-Eigenschaft auf festgelegt wird [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) [`Color`](xref:Xamarin.Forms.Color) :
 
@@ -62,7 +55,7 @@ var text = MyEditor.Text;
 var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
-### <a name="preventing-text-entry"></a>Verhindern von Texteinträgen
+## <a name="prevent-text-entry"></a>Text Eintrag verhindern
 
 Benutzer können daran gehindert werden, den Text in einer [`Editor`](xref:Xamarin.Forms.Editor) zu ändern, indem Sie die-Eigenschaft mit dem `IsReadOnly` Standardwert `false` auf festlegen `true` :
 
@@ -78,7 +71,33 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 > [!NOTE]
 > Die- `IsReadonly` Eigenschaft ändert nicht die visuelle Darstellung eines [`Editor`](xref:Xamarin.Forms.Editor) , anders als die- `IsEnabled` Eigenschaft, die auch die visuelle Darstellung von `Editor` in grau ändert.
 
-### <a name="limiting-input-length"></a>Einschränken der Eingabe Länge
+## <a name="transform-text"></a>Transformieren von Text
+
+Ein- [`Editor`](xref:Xamarin.Forms.Editor) Objekt kann die Schreibweise seines Texts, der in der-Eigenschaft gespeichert ist, Transformieren `Text` , indem die- `TextTransform` Eigenschaft auf einen Wert der-Enumeration festgelegt wird `TextTransform` . Diese Enumeration hat vier Werte:
+
+- `None`Gibt an, dass der Text nicht transformiert wird.
+- `Default`Gibt an, dass das Standardverhalten für die Plattform verwendet wird. Dies ist der Standardwert der `TextTransform`-Eigenschaft.
+- `Lowercase`Gibt an, dass der Text in Kleinbuchstaben umgewandelt wird.
+- `Uppercase`Gibt an, dass der Text in Großbuchstaben umgewandelt wird.
+
+Im folgenden Beispiel wird gezeigt, wie Text in Großbuchstaben umgewandelt wird:
+
+```xaml
+<Editor Text="This text will be displayed in uppercase."
+        TextTransform="Uppercase" />
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+Editor editor = new Editor
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
+
+## <a name="limit-input-length"></a>Eingabe Länge begrenzen
 
 Die [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschaft kann verwendet werden, um die für zulässige Eingabe Länge einzuschränken [`Editor`](xref:Xamarin.Forms.Editor) . Diese Eigenschaft sollte auf eine positive ganze Zahl festgelegt werden:
 
@@ -92,7 +111,7 @@ var editor = new Editor { ... MaxLength = 10 };
 
 Ein [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschafts Wert von 0 gibt an, dass keine Eingabe zulässig ist, und der Wert `int.MaxValue` , der der Standardwert für ein ist [`Editor`](xref:Xamarin.Forms.Editor) , gibt an, dass die Anzahl der Zeichen, die eingegeben werden können, nicht wirksam ist.
 
-### <a name="character-spacing"></a>Zeichenabstand
+## <a name="character-spacing"></a>Zeichenabstand
 
 Der Zeichenabstand kann auf ein angewendet werden, [`Editor`](xref:Xamarin.Forms.Editor) indem die- `Editor.CharacterSpacing` Eigenschaft auf einen Wert festgelegt wird `double` :
 
@@ -112,7 +131,7 @@ Das Ergebnis ist, dass Zeichen im Text, die von angezeigt [`Editor`](xref:Xamari
 > [!NOTE]
 > Der `CharacterSpacing` -Eigenschafts Wert wird auf den Text angewendet, der von den `Text` Eigenschaften und angezeigt wird `Placeholder` .
 
-### <a name="auto-sizing-an-editor"></a>Automatische Größenanpassung eines Editors
+## <a name="auto-size-an-editor"></a>Automatische Größe eines Editors
 
 Eine [`Editor`](xref:Xamarin.Forms.Editor) kann so festgelegt werden, dass die Größe des Inhalts automatisch geändert wird, indem die-Eigenschaft auf festgelegt wird [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) . Dies ist ein Wert der- [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) Enumeration. Diese Enumeration verfügt über zwei Werte:
 
@@ -134,7 +153,7 @@ Wenn die automatische Größenänderung aktiviert ist, erhöht sich die Höhe de
 > [!NOTE]
 > [`Editor`](xref:Xamarin.Forms.Editor)Wenn die Eigenschaft festgelegt wurde, wird keine automatische Größe angezeigt [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) .
 
-### <a name="customizing-the-keyboard"></a>Anpassen der Tastatur
+## <a name="customize-the-keyboard"></a>Anpassen der Tastatur
 
 Die Tastatur, die angezeigt wird, wenn Benutzer mit einer interagieren [`Editor`](xref:Xamarin.Forms.Editor) , kann Programm gesteuert über die- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) Eigenschaft auf eine der folgenden Eigenschaften der-Klasse festgelegt werden [`Keyboard`](xref:Xamarin.Forms.Keyboard) :
 
@@ -193,7 +212,7 @@ var editor = new Editor();
 editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+## <a name="enable-and-disable-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
 
 Die- [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Eigenschaft steuert, ob die Rechtschreibprüfung aktiviert ist. Standardmäßig ist die-Eigenschaft auf festgelegt `true` . Wenn der Benutzer Text eingibt, werden falsche Schreibweisen angegeben.
 
@@ -210,7 +229,7 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > Wenn die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf festgelegt ist `false` und eine benutzerdefinierte Tastatur nicht verwendet wird, wird die native Rechtschreibprüfung deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Rechtschreibprüfung deaktiviert (z. b.), [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat) wird die- `IsSpellCheckEnabled` Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Rechtschreibprüfung für einen zu aktivieren `Keyboard` , der diese explizit deaktiviert.
 
-### <a name="enabling-and-disabling-text-prediction"></a>Aktivieren und Deaktivieren der Textvorhersage
+## <a name="enable-and-disable-text-prediction"></a>Aktivieren und Deaktivieren der Text Vorhersage
 
 Die `IsTextPredictionEnabled` -Eigenschaft steuert, ob die Text Vorhersage und die automatische Textkorrektur aktiviert ist. Standardmäßig ist die-Eigenschaft auf festgelegt `true` . Wenn der Benutzer Text eingibt, werden Word-Vorhersagen angezeigt.
 
@@ -227,7 +246,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > Wenn die `IsTextPredictionEnabled` -Eigenschaft auf festgelegt ist `false` und keine benutzerdefinierte Tastatur verwendet wird, werden die Text Vorhersage und die automatische Textkorrektur deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Text Vorhersage deaktiviert, wird die- `IsTextPredictionEnabled` Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht zum Aktivieren der Text Vorhersage für einen verwendet werden, der diese `Keyboard` explizit deaktiviert.
 
-### <a name="colors"></a>Farben
+## <a name="colors"></a>Farben
 
 `Editor`kann festgelegt werden, um eine benutzerdefinierte Hintergrundfarbe über die-Eigenschaft zu verwenden `BackgroundColor` . Eine besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden können. Da jede Plattform über andere Standardwerte für die Textfarbe verfügt, müssen Sie möglicherweise für jede Plattform eine benutzerdefinierte Hintergrundfarbe festlegen. Weitere Informationen zur Optimierung der Benutzeroberfläche für die einzelnen Plattformen finden Sie unter [Arbeiten mit Platt Form Anpassungen](~/xamarin-forms/platform/device.md) .
 
@@ -275,7 +294,7 @@ In XAML:
 
 Stellen Sie sicher, dass die von Ihnen ausgewählten Hintergrund-und Textfarben auf jeder Plattform verwendbar sind und keinen Platzhalter Text verbergen.
 
-## <a name="interactivity"></a>Interaktivität
+## <a name="events-and-interactivity"></a>Ereignisse und Interaktivität
 
 `Editor`macht zwei Ereignisse verfügbar:
 

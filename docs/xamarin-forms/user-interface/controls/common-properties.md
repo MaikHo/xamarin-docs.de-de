@@ -6,18 +6,18 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 06/19/2020
+ms.date: 07/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: b4c0ef44f528e3cbc56a27e98a1c38246736ff8c
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795033"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918342"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
+# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
 
 Die- Xamarin.Forms `VisualElement` Klasse ist die Basisklasse für die meisten Steuerelemente, die in einer-Anwendung verwendet werden Xamarin.Forms . Die- `VisualElement` Klasse definiert viele [Eigenschaften](#properties), [Methoden](#methods)und [Ereignisse](#events) , die in abgeleiteten Klassen verwendet werden.
 
@@ -32,6 +32,10 @@ Die- `AnchorX` Eigenschaft ist ein `double` Wert, der den Mittelpunkt auf der X-
 ### [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
 Die- `AnchorY` Eigenschaft ist ein `double` Wert, der den Mittelpunkt auf der X-Achse für Transformationen wie Skalierung und Drehung definiert. Der Standardwert ist 0,5.
+
+### `Background`
+
+Die- `Background` Eigenschaft ist ein `Brush` Wert, mit dem Pinsel als Hintergrund in jedem Steuerelement verwendet werden können. Der Standardwert ist `Brush.Default`.
 
 ### [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)
 

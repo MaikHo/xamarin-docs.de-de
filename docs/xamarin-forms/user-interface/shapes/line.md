@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935446"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918637"
 ---
-# <a name="xamarinforms-shapes-line"></a>Xamarin.FormsFormen: Linie
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.FormsFormen: Linie
 
-![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erh√§ltlich.")
+![Vorabrelease der API](~/media/shared/preview.png)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Line` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Linien verwendet werden. Informationen zu den Eigenschaften, die die `Line` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -50,7 +50,8 @@ Das folgende XAML-Beispiel zeigt, wie Sie eine Linie zeichnen:
       Y1="0"
       X2="0"
       Y2="120"
-      Stroke="Red" />
+      Stroke="Red"
+      StrokeThickness="1" />
 ```
 
 In diesem Beispiel wird eine rote diagonal Linie von (40, 0) bis (0120) gezeichnet:
@@ -61,6 +62,7 @@ Da die `X1` `Y1` Eigenschaften,, `X2` und die `Y2` Standardwerte 0 aufweisen, k√
 
 ```xaml
 <Line Stroke="Red"
+      StrokeThickness="1"
       X2="200" />
 ```
 
@@ -74,6 +76,7 @@ Das folgende XAML-Beispiel zeigt, wie Sie eine gestrichelte Linie zeichnen:
       X2="0"
       Y2="120"
       Stroke="DarkBlue"
+      StrokeThickness="1"
       StrokeDashArray="1,1"
       StrokeDashOffset="6" />
 ```
