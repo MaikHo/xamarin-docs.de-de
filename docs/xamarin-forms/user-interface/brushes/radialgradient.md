@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd915384c630cc08a2bd79a52dd22ccb40835dfa
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 897ffd8b86eb161f0264a095b5a041828e631dae
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919095"
+ms.locfileid: "87919549"
 ---
 # <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.FormsPinsel: radiale Farbverläufe
 
 ![Vorschau-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 Die `RadialGradientBrush` -Klasse wird von der `GradientBrush` -Klasse abgeleitet und zeichnet einen Bereich mit einem radialen Farbverlauf, der zwei oder mehr Farben in einem Kreis kombiniert. `GradientStop`-Objekte werden verwendet, um die Farben im Farbverlauf und deren Positionen anzugeben. Weitere Informationen zu `GradientStop` Objekten finden Sie unter [ Xamarin.Forms Pinsel: Farbverläufe](gradient.md).
 
@@ -102,5 +102,5 @@ In diesem Beispiel wird der Hintergrund von [`Frame`](xref:Xamarin.Forms.Frame) 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Brushesdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Brushesdemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.FormsPinsel: Farbverläufe](gradient.md)

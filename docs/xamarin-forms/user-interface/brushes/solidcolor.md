@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04e882f9b64d0e1f56e1170d353af4e13b079933
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919090"
+ms.locfileid: "87919562"
 ---
 # <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.FormsPinsel: voll Tonfarben
 
 ![Vorschau-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 Die `SolidColorBrush` -Klasse wird von der `Brush` -Klasse abgeleitet und zum Zeichnen eines Bereichs mit einer voll Tonfarbe verwendet. Es gibt eine Vielzahl von Ansätzen zum Angeben der Farbe einer `SolidColorBrush` . Beispielsweise können Sie die Farbe mit einem [`Color`](xref:Xamarin.Forms.Color) Wert oder mit einem der vordefinierten Objekte angeben, `SolidColorBrush` die von der-Klasse bereitgestellt werden `Brush` .
 
@@ -131,5 +131,5 @@ Aus Gründen der praktische `Brush` bereitstellt die-Klasse eine Reihe von häuf
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Brushesdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Brushesdemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Farben inXamarin.Forms](~/xamarin-forms/user-interface/colors.md)

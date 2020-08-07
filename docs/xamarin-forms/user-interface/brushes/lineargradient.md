@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e83e3cc110e2ab5f9bf6a1cda54fbb88e65bee17
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 734ecae4fdafd71f0c88ddc5e4b4ed0c672f2019
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919094"
+ms.locfileid: "87919631"
 ---
 # <a name="no-locxamarinforms-brushes-linear-gradients"></a>Xamarin.FormsPinsel: lineare Farbverläufe
 
 ![Vorschau-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 Die `LinearGradientBrush` -Klasse wird von der `GradientBrush` -Klasse abgeleitet und zeichnet einen Bereich mit einem linearen Farbverlauf, der zwei oder mehr Farben entlang einer Linie kombiniert, die als Farbverlaufs Achse bezeichnet wird. `GradientStop`-Objekte werden verwendet, um die Farben im Farbverlauf und deren Positionen anzugeben. Weitere Informationen zu `GradientStop` Objekten finden Sie unter [ Xamarin.Forms Pinsel: Farbverläufe](gradient.md).
 
@@ -134,5 +134,5 @@ In diesem Beispiel wird der Hintergrund von [`Frame`](xref:Xamarin.Forms.Frame) 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Brushesdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Brushesdemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.FormsPinsel: Farbverläufe](gradient.md)

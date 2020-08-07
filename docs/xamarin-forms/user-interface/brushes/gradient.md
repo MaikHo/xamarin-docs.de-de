@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b6fe37fda3fd54b4df5cb6f5dacce0d910ecb3f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919134"
+ms.locfileid: "87919618"
 ---
 # <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.FormsPinsel: Farbverläufe
 
 ![Vorschau-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 Die `GradientBrush` -Klasse wird von der `Brush` -Klasse abgeleitet, und ist eine abstrakte Klasse, die einen Farbverlauf beschreibt, der aus Farbverlaufs Stopps besteht. Ein Farbverlaufspinsel zeichnet einen Bereich mit mehreren Farben, die sich auf einer Achse miteinander vermischen. Klassen, die von abgeleitet `GradientBrush` werden, beschreiben verschiedene Möglichkeiten zum Interpretieren von Farbverlaufs Stopps und stellen Xamarin.Forms die folgenden Farbverlaufs Pinsel bereit:
 
@@ -71,6 +71,6 @@ In diesem Diagramm markieren die Kreise die Position von Farbverlaufs Stopps, un
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Brushesdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Brushesdemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.FormsPinsel: lineare Farbverläufe](lineargradient.md)
 - [Xamarin.FormsPinsel: radiale Farbverläufe](radialgradient.md)
