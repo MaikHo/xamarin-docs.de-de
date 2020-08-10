@@ -6,18 +6,18 @@ ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
+ms.date: 07/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76f9b4e243af908e5d00ba8b812dfd143104fe65
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137786"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426850"
 ---
-# <a name="xamarinforms-shell-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Shell-Renderer
+# <a name="no-locxamarinforms-shell-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Shell-Renderer
 
 Ein Vorteil von Xamarin.Forms-Shell-Anwendungen besteht darin, dass ihr Aussehen und Verhalten über die von den verschiedenen Shell-Klassen bereitgestellten Eigenschaften und Methoden stark angepasst werden kann. Allerdings ist es auch möglich, einen benutzerdefinierten Shell-Renderer zu erstellen, wenn komplexere plattformspezifische Anpassungen erforderlich sind. Wie bei anderen benutzerdefinierten Renderern können Sie einen benutzerdefinierten Shell-Renderer zu nur einem Plattformprojekt hinzufügen, um Aussehen und Verhalten anzupassen, während auf der anderen Plattform das Standardverhalten möglich ist. Oder Sie fügen zu jedem Plattformprojekt einen anderen benutzerdefinierten Shell-Renderer hinzu, um Aussehen und Verhalten unter iOS und Android anzupassen.
 
@@ -42,14 +42,14 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten She
 
 Die `ShellRenderer`-Klasse stellt die folgenden überschreibbaren Methoden zur Verfügung:
 
-| iOS | Android |
-| --- | --- |
-| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+| iOS | Android | UWP |
+| --- | --- | --- |
+| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` | `CreateShellFlyoutTemplateSelector`<br />`CreateShellHeaderRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateFlyoutBackdropColor`<br />`UpdateFlyoutBackgroundColor` |
 
 Die Klassen `FlyoutItem` und `TabBar` sind Aliase für die `ShellItem`-Klasse, und die `Tab`-Klasse ist ein Alias für die `ShellSection`-Klasse. Aus diesem Grund sollte die `CreateShellItemRenderer`-Methode beim Erstellen eines benutzerdefinierten Renderers für `FlyoutItem`-Objekte die `CreateShellSectionRenderer`-Methode beim Erstellen eines benutzerdefinierten Renderers für `Tab`-Objekte überschrieben werden.
 
 > [!IMPORTANT]
-> Es gibt zusätzliche Klassen für Shell-Renderer, z.B. `ShellSectionRenderer` und `ShellItemRenderer` unter iOS und Android. Diese zusätzlichen Rendererklassen werden jedoch durch Überschreibungen in der Klasse `ShellRenderer` erzeugt. Daher kann das Anpassen des Verhaltens dieser zusätzlichen Rendererklassen erreicht werden, indem sie in Unterklassen aufgeteilt werden und eine Instanz der Unterklasse in der entsprechenden Überschreibung in der in Unterklassen aufgeteilten `ShellRenderer`-Klasse erzeugt wird.
+> Es gibt zusätzliche Klassen für Shellrenderer, z. B. `ShellSectionRenderer` und `ShellItemRenderer` unter iOS, Android und UWP. Diese zusätzlichen Rendererklassen werden jedoch durch Überschreibungen in der Klasse `ShellRenderer` erzeugt. Daher kann das Anpassen des Verhaltens dieser zusätzlichen Rendererklassen erreicht werden, indem sie in Unterklassen aufgeteilt werden und eine Instanz der Unterklasse in der entsprechenden Überschreibung in der in Unterklassen aufgeteilten `ShellRenderer`-Klasse erzeugt wird.
 
 ### <a name="ios-example"></a>iOS-Beispiel
 
