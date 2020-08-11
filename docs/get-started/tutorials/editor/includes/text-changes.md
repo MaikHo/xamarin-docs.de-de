@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 653d3677f96d7da78af61531c535b1b7db684e7e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f1671f4f40e3eb44465431d39994cf5e623665a1
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "77135107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919285"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -47,7 +47,7 @@ ms.locfileid: "77135107"
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, geben Sie in den [`Editor`](xref:Xamarin.Forms.Editor) Text ein, und beobachten Sie das Auslösen des [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)-Ereignisses. Nehmen Sie den Fokus vom `Editor`, um das Auslösen des [`Completed`](xref:Xamarin.Forms.Entry.Completed)-Ereignisses zu beobachten.
 
-    Weitere Informationen zu den [`Editor`](xref:Xamarin.Forms.Editor)-Ereignissen finden Sie unter [Interaktivität](~/xamarin-forms/user-interface/text/editor.md#interactivity) im Artikel [Xamarin.Forms-Editor](~/xamarin-forms/user-interface/text/editor.md).
+    Weitere Informationen zu den [`Editor`](xref:Xamarin.Forms.Editor)-Ereignissen finden Sie unter [Ereignisse und Interaktivität](~/xamarin-forms/user-interface/text/editor.md#events-and-interactivity) im Artikel [Xamarin.Forms-Editor](~/xamarin-forms/user-interface/text/editor.md).
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -90,4 +90,4 @@ ms.locfileid: "77135107"
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, geben Sie in den [`Editor`](xref:Xamarin.Forms.Editor) Text ein, und beobachten Sie das Auslösen des [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)-Ereignisses. Nehmen Sie den Fokus vom `Editor`, um das Auslösen des [`Completed`](xref:Xamarin.Forms.Entry.Completed)-Ereignisses zu beobachten.
 
-    Weitere Informationen zu den [`Editor`](xref:Xamarin.Forms.Editor)-Ereignissen finden Sie unter [Interaktivität](~/xamarin-forms/user-interface/text/editor.md#interactivity) im Artikel [Xamarin.Forms-Editor](~/xamarin-forms/user-interface/text/editor.md).
+    Weitere Informationen zu den [`Editor`](xref:Xamarin.Forms.Editor)-Ereignissen finden Sie unter [Ereignisse und Interaktivität](~/xamarin-forms/user-interface/text/editor.md#events-and-interactivity) im Artikel [Xamarin.Forms-Editor](~/xamarin-forms/user-interface/text/editor.md).

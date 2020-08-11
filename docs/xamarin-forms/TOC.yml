@@ -289,6 +289,8 @@ items:
             href: app-fundamentals/gestures/pan.md
           - name: Wischen
             href: app-fundamentals/gestures/swipe.md
+          - name: "Drag\_&\_Drop"
+            href: app-fundamentals/gestures/drag-and-drop.md
       - name: Lokale Benachrichtigungen
         href: app-fundamentals/local-notifications.md
       - name: Lokalisierung
@@ -546,6 +548,20 @@ items:
                 href: user-interface/animation/easing.md
               - name: Benutzerdefinierte Animationen
                 href: user-interface/animation/custom.md
+          - name: Pinsel
+            items:
+              - name: Übersicht
+                href: user-interface/brushes/index.md
+              - name: Volltonfarben
+                href: user-interface/brushes/solidcolor.md
+              - name: Farbverläufe
+                items:
+                  - name: Übersicht
+                    href: user-interface/brushes/gradient.md
+                  - name: Lineare Farbverläufe
+                    href: user-interface/brushes/lineargradient.md
+                  - name: Strahlenförmige Farbverläufe
+                    href: user-interface/brushes/radialgradient.md
           - name: Farben
             href: user-interface/colors.md
           - name: DataPages
