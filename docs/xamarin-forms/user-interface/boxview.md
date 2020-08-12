@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f4788c0201d2d286ff4de9b29ba6385d323a3b0
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573819"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130941"
 ---
-# <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxview
+# <a name="no-locxamarinforms-boxview"></a>Xamarin.FormsBoxview
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView)Rendert ein einfaches Rechteck mit einer angegebenen Breite, Höhe und Farbe. Sie können `BoxView` für Dekorationen, rudimentäre Grafiken und für die Interaktion mit dem Benutzer über die Fingereingabe verwenden.
 
@@ -64,13 +64,13 @@ Im [**basicboxview**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-s
 </ContentPage>
 ```
 
-So sieht das Ergebnis aus:
+Das Ergebnis lautet wie folgt:
 
 [![Grundlegende boxview](boxview-images/basicboxview-small.png "Grundlegende boxview")](boxview-images/basicboxview-large.png#lightbox "Basicboxview")
 
 Wenn die `VerticalOptions` -Eigenschaft und die-Eigenschaft `HorizontalOptions` aus dem- `BoxView` Tag entfernt oder auf festgelegt werden `Fill` , `BoxView` wird der durch die Größe der Seite eingeschränkt und erweitert, um die Seite auszufüllen.
 
-Ein `BoxView` kann auch ein untergeordnetes Element eines sein `AbsoluteLayout` . In diesem Fall werden sowohl der Speicherort als auch die Größe der `BoxView` mithilfe der `LayoutBounds` angefügten bindbaren Eigenschaft festgelegt. Die `AbsoluteLayout` wird im Artikel " [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)" erläutert.
+Ein `BoxView` kann auch ein untergeordnetes Element eines sein `AbsoluteLayout` . In diesem Fall werden sowohl der Speicherort als auch die Größe der `BoxView` mithilfe der `LayoutBounds` angefügten bindbaren Eigenschaft festgelegt. Die `AbsoluteLayout` wird im Artikel " [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolutelayout.md)" erläutert.
 
 Beispiele für alle diese Fälle finden Sie in den folgenden Beispielprogrammen.
 
@@ -762,7 +762,7 @@ public partial class MainPage : ContentPage
 
 Die zweite Seite wird etwas anders behandelt: eine Animations Beschleunigungs Funktion wird angewendet, um die Bewegung als mechanisch und nicht als glatt zu gestalten. Bei jedem Tick Ruft die zweite Hand ein wenig ab und überschreitet dann das Ziel. Diese Menge an Code erhöht den Realismus der Bewegung.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Grundlegende boxview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 - [Text Dekoration (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
