@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf0315d2d077e06ff3ded4d66814afe050fdfad4
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931975"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186199"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelten Komponenten
 
@@ -58,7 +58,7 @@ Weitere Informationen zu [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)Nachrichten sind Zeichen folgen, die zum Identifizieren von Nachrichten verwendet werden. Das folgende Codebeispiel zeigt die Nachrichten, die innerhalb der eshoponcontainers-Mobile App definiert sind:
 
 ```csharp
-public class MessengerKeys  
+public class MessageKeys  
 {  
     // Add product to basket  
     public const string AddProduct = "AddProduct";  
@@ -78,7 +78,7 @@ In diesem Beispiel werden Nachrichten mithilfe von Konstanten definiert. Der Vor
 Herausgeber benachrichtigen Abonnenten einer Nachricht mit einer der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Überladungen. Im folgenden Codebeispiel wird das Veröffentlichen der `AddProduct` Nachricht veranschaulicht:
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 ```
 
 In diesem Beispiel gibt die- [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) Methode drei Argumente an:
@@ -118,7 +118,7 @@ Ein Abonnent muss möglicherweise nicht jede Instanz einer veröffentlichten Nac
 Abonnenten können Nachrichten kündigen, die Sie nicht mehr erhalten möchten. Dies wird mit einer der- [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) über Ladungen erreicht, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
 ```
 
 In diesem Beispiel gibt die [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) Methoden Syntax die Typargumente wieder, die beim Abonnieren der `AddProduct` Nachricht angegeben werden.
@@ -127,7 +127,7 @@ In diesem Beispiel gibt die [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.U
 
 Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573416"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186186"
 ---
 # <a name="inspector-installation-and-requirements"></a>Installation und Anforderungen des Inspektors
 
@@ -31,7 +31,7 @@ ms.locfileid: "84573416"
 
 -----
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 ### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -49,10 +49,10 @@ Die Live-App-Prüfung ist für Unternehmenskunden verfügbar.
 
 ### <a name="supported-app-platforms"></a>Unterstützte Anwendungsplattformen
 
-|App-Plattform|IDE-Unterstützung|Notizen|
+|App-Plattform|IDE-Unterstützung|Hinweise|
 |--- |--- |--- |
 |Mac|Wird nur in Visual Studio für Mac unterstützt.|
-|iOS|In Visual Studio 2017 und Visual Studio für Mac unterstützt| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
+|iOS|In Visual Studio 2017 und Visual Studio für Mac unterstützt| Das Linker-Verhalten muss auf " [**nicht verknüpfen**](~/ios/deploy-test/linker.md) " festgelegt werden (unter **IOS** -buildprojektoptionen) |
 |Android|In Visual Studio 2017 und Visual Studio für Mac unterstützt|Muss auf Android >= 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Muss Google-, Visual Studio-oder xamarin Android-Emulatoren verwenden. Android 7-Emulatoren können zu diesem Zeitpunkt keine Überprüfung zulassen.|
 |WPF|Wird nur in Visual Studio 2017 unterstützt.|
 

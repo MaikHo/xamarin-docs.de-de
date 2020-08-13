@@ -1,5 +1,5 @@
 ---
-title: Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
+title: Speichern und Zugreifen auf Daten in Azure Storage von Xamarin.Forms
 description: Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Xamarin.Forms Sie zum Speichern von Text-und Binärdaten in Azure Storage und zum Zugreifen auf die Daten verwenden.
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
@@ -10,14 +10,14 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d7b97f21e5184a445cfac85dc06a7da0e1a6a4c5
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936655"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186212"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
+# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage von Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
@@ -65,7 +65,7 @@ Jedes Objekt, das in Azure Storage gespeichert ist, verfügt über eine eindeuti
 
 Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Beispielsweise hat eine BLOB-Adresse das Format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` .
 
-## <a name="setup"></a>Setup
+## <a name="setup"></a>Einrichten
 
 Der Prozess für die Integration eines Azure Storage Kontos in eine- Xamarin.Forms Anwendung sieht wie folgt aus:
 
@@ -81,22 +81,22 @@ Jede Anforderung, die an Speicherkonto Ressourcen gerichtet ist, muss authentifi
 - Gemeinsam verwendeter Schlüssel. Bei diesem Ansatz werden der Name des Azure Storage Kontos und der Kontoschlüssel verwendet, um auf Speicherdienste zuzugreifen. Einem Speicherkonto werden bei der Erstellung zwei private Schlüssel zugewiesen, die für die Authentifizierung mit gemeinsam verwendetem Schlüssel verwendet werden können.
 - Shared Access Signature. Hierbei handelt es sich um ein Token, das an eine URL angefügt werden kann, die den Delegierten Zugriff auf eine Speicher Ressource mit den von ihr festgelegten Berechtigungen für den Gültigkeits Zeitraum ermöglicht.
 
-Es können Verbindungs Zeichenfolgen angegeben werden, die die für den Zugriff auf Azure Storage Ressourcen von einer Anwendung erforderlichen Authentifizierungsinformationen enthalten. Außerdem kann eine Verbindungs Zeichenfolge konfiguriert werden, um von Visual Studio aus eine Verbindung mit dem Azure Storage-Emulator herzustellen.
+Es können Verbindungs Zeichenfolgen angegeben werden, die die für den Zugriff auf Azure Storage Ressourcen von einer Anwendung erforderlichen Authentifizierungsinformationen enthalten. Außerdem kann eine Verbindungs Zeichenfolge konfiguriert werden, um von Visual Studio aus eine Verbindung mit dem Azure-Speicher Emulator herzustellen.
 
 > [!NOTE]
 > Azure Storage unterstützt HTTP und HTTPS in einer Verbindungs Zeichenfolge. Die Verwendung von HTTPS wird jedoch empfohlen.
 
 ### <a name="connecting-to-the-azure-storage-emulator"></a>Herstellen einer Verbindung mit dem Azure Storage-Emulator
 
-Der Azure Storage Emulator bietet eine lokale Umgebung, die die Azure-BLOB-, Warteschlangen-und Tabellen Dienste zu Entwicklungszwecken emuliert.
+Der Azure-Speicher Emulator bietet eine lokale Umgebung, die die Azure-BLOB-, Warteschlangen-und Tabellen Dienste zu Entwicklungszwecken emuliert.
 
-Die folgende Verbindungs Zeichenfolge sollte verwendet werden, um eine Verbindung mit dem Azure Storage Emulator herzustellen:
+Die folgende Verbindungs Zeichenfolge sollte verwendet werden, um eine Verbindung mit dem Azure-Speicher Emulator herzustellen:
 
 ```csharp
 UseDevelopmentStorage=true
 ```
 
-Weitere Informationen zum Azure Storage Emulator finden Sie unter [Verwenden des Azure Storage Emulators für Entwicklung und Tests](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
+Weitere Informationen zum Azure-Speicher Emulator finden Sie unter [Verwenden des Azure-Speicher Emulators für Entwicklung und Tests](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>Herstellen einer Verbindung mit Azure Storage mithilfe eines gemeinsam genutzten Schlüssels
 
@@ -106,7 +106,7 @@ Das folgende Format der Verbindungs Zeichenfolge sollte zum Herstellen einer Ver
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName`muss durch den Namen Ihres Speicher Kontos ersetzt werden und sollte durch `myAccountKey` einen ihrer beiden Konto Zugriffsschlüssel ersetzt werden.
+`myAccountName` muss durch den Namen Ihres Speicher Kontos ersetzt werden und sollte durch `myAccountKey` einen ihrer beiden Konto Zugriffsschlüssel ersetzt werden.
 
 > [!NOTE]
 > Wenn Sie die Authentifizierung mit gemeinsam verwendetem Schlüssel verwenden, werden Ihr Kontoname und der Kontoschlüssel an alle Personen verteilt, die Ihre Anwendung verwenden. Dadurch erhält der vollständige Lese-/Schreibzugriff auf das Speicherkonto. Verwenden Sie daher die Authentifizierung mit gemeinsam verwendetem Schlüssel nur für Testzwecke, und verteilen Sie Schlüssel niemals an andere Benutzer.
@@ -117,7 +117,7 @@ Das folgende Format der Verbindungs Zeichenfolge sollte verwendet werden, um ein
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint`sollte durch die URL Ihres BLOB-Endpunkts ersetzt werden und `mySharedAccessSignature` muss durch ihre SAS ersetzt werden. Die SAS stellt das Protokoll, den Dienst Endpunkt und die Anmelde Informationen für den Zugriff auf die Ressource bereit.
+`myBlobEndpoint` sollte durch die URL Ihres BLOB-Endpunkts ersetzt werden und `mySharedAccessSignature` muss durch ihre SAS ersetzt werden. Die SAS stellt das Protokoll, den Dienst Endpunkt und die Anmelde Informationen für den Zugriff auf die Ressource bereit.
 
 > [!NOTE]
 > Die SAS-Authentifizierung wird für Produktionsanwendungen empfohlen. In einer Produktionsanwendung sollte die SAS jedoch bei Bedarf von einem Back-End-Dienst abgerufen werden, anstatt mit der Anwendung gebündelt zu werden.
@@ -262,7 +262,7 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 Nachdem Sie einen Container Verweis abgerufen haben, ruft die-Methode einen BLOB-Verweis für das angegebene BLOB ab. Das BLOB wird dann mit der- `DeleteIfExistsAsync` Methode gelöscht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Azure Storage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [Einführung in den Speicher](https://azure.microsoft.com/documentation/articles/storage-introduction/)
