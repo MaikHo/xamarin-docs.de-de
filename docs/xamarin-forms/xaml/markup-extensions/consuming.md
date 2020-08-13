@@ -10,39 +10,39 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903107"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181510"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML-Markup Erweiterungen helfen, die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem die Festlegung von Element Attributen aus einer Vielzahl von Quellen ermöglicht wird. Mehrere XAML-Markup Erweiterungen sind Teil der XAML 2009-Spezifikation. Diese werden in XAML-Dateien mit dem entsprechenden `x` Namespace Präfix angezeigt und werden häufig mit diesem Präfix bezeichnet. In diesem Artikel werden die folgenden Markup Erweiterungen erläutert:
 
-- [`x:Static`](#xstatic-markup-extension)– verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
-- [`x:Reference`](#xreference-markup-extension)– verweist auf benannte Elemente auf der Seite.
-- [`x:Type`](#xtype-markup-extension)– Legen Sie ein Attribut auf ein- `System.Type` Objekt fest.
-- [`x:Array`](#xarray-markup-extension)– Erstellen Sie ein Array von Objekten eines bestimmten Typs.
-- [`x:Null`](#xnull-markup-extension)– Legen Sie ein Attribut auf einen `null` Wert fest.
-- [`OnPlatform`](#onplatform-markup-extension)– passen Sie die Darstellung der Benutzeroberfläche plattformspezifisch an.
-- [`OnIdiom`](#onidiom-markup-extension)– Anpassen der Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts, auf dem die Anwendung ausgeführt wird.
-- [`DataTemplate`](#datatemplate-markup-extension)– Konvertiert einen-Typ in einen-Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
-- [`FontImage`](#fontimage-markup-extension)– zeigt ein Schriftart Symbol in einer beliebigen Ansicht an, in der ein angezeigt werden kann `ImageSource` .
-- [`AppThemeBinding`](#appthemebinding-markup-extension)– verwendet eine Ressource basierend auf dem aktuellen Systemdesign.
+- [`x:Static`](#xstatic-markup-extension) – verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
+- [`x:Reference`](#xreference-markup-extension) – verweist auf benannte Elemente auf der Seite.
+- [`x:Type`](#xtype-markup-extension) – Legen Sie ein Attribut auf ein- `System.Type` Objekt fest.
+- [`x:Array`](#xarray-markup-extension) – Erstellen Sie ein Array von Objekten eines bestimmten Typs.
+- [`x:Null`](#xnull-markup-extension) – Legen Sie ein Attribut auf einen `null` Wert fest.
+- [`OnPlatform`](#onplatform-markup-extension) – passen Sie die Darstellung der Benutzeroberfläche plattformspezifisch an.
+- [`OnIdiom`](#onidiom-markup-extension) – Anpassen der Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts, auf dem die Anwendung ausgeführt wird.
+- [`DataTemplate`](#datatemplate-markup-extension) – Konvertiert einen-Typ in einen-Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
+- [`FontImage`](#fontimage-markup-extension) – zeigt ein Schriftart Symbol in einer beliebigen Ansicht an, in der ein angezeigt werden kann `ImageSource` .
+- [`AppThemeBinding`](#appthemebinding-markup-extension) – verwendet eine Ressource basierend auf dem aktuellen Systemdesign.
 
 Weitere XAML-Markup Erweiterungen wurden in der Vergangenheit von anderen XAML-Implementierungen unterstützt und werden auch von unterstützt Xamarin.Forms . Diese werden in anderen Artikeln ausführlicher beschrieben:
 
-- `StaticResource`-Verweis Objekte aus einem Ressourcen Wörterbuch, wie im Artikel [**Ressourcen Wörterbücher**](~/xamarin-forms/xaml/resource-dictionaries.md)beschrieben.
-- `DynamicResource`-reagieren Sie auf Änderungen in Objekten in einem Ressourcen Wörterbuch, wie im Artikel [**dynamische Stile**](~/xamarin-forms/user-interface/styles/dynamic.md)beschrieben.
-- `Binding`-Erstellen Sie eine Verknüpfung zwischen Eigenschaften von zwei-Objekten, wie im Artikel [**Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md)beschrieben.
+- `StaticResource` -Verweis Objekte aus einem Ressourcen Wörterbuch, wie im Artikel  [**Ressourcen Wörterbücher**](~/xamarin-forms/xaml/resource-dictionaries.md)beschrieben.
+- `DynamicResource` -reagieren Sie auf Änderungen in Objekten in einem Ressourcen Wörterbuch, wie im Artikel [**dynamische Stile**](~/xamarin-forms/user-interface/styles/dynamic.md)beschrieben.
+- `Binding` -Erstellen Sie eine Verknüpfung zwischen Eigenschaften von zwei-Objekten, wie im Artikel [**Datenbindung**](~/xamarin-forms/app-fundamentals/data-binding/index.md)beschrieben.
 - `TemplateBinding`: führt Daten Bindungen aus einer Steuerelement Vorlage aus, wie im Artikel [** Xamarin.Forms Steuerelement Vorlagen**](~/xamarin-forms/app-fundamentals/templates/control-template.md)erläutert.
-- `RelativeSource`: legt die Bindungs Quelle relativ zur Position des Bindungs Ziels fest, wie im Artikel [relative Bindungen](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)erläutert.
+- `RelativeSource` : legt die Bindungs Quelle relativ zur Position des Bindungs Ziels fest, wie im Artikel [relative Bindungen](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)erläutert.
 
-Das [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die benutzerdefinierte Markup Erweiterung [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Diese Markup Erweiterung wird im Artikel [**relativelayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)beschrieben.
+Das [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die benutzerdefinierte Markup Erweiterung [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Diese Markup Erweiterung wird im Artikel [**relativelayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)beschrieben.
 
 ## <a name="xstatic-markup-extension"></a>x:Static-Markuperweiterung
 
@@ -192,7 +192,7 @@ Beide `x:Reference` Ausdrücke verwenden die abgekürzte Version des `ReferenceE
 
 ## <a name="xtype-markup-extension"></a>x:Type-Markuperweiterung
 
-Die `x:Type` Markup Erweiterung ist die XAML-Entsprechung des c#- [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) Schlüssel Worts. Sie wird von der- [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) Klasse unterstützt, die eine Eigenschaft [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) mit dem Namen des Typs definiert, `string` die auf einen Klassen-oder Struktur Namen festgelegt ist. Die `x:Type` Markup Erweiterung gibt das- [`System.Type`](xref:System.Type) Objekt dieser Klasse oder Struktur zurück. `TypeName`ist die Content-Eigenschaft von `TypeExtension` `TypeName=` . Dies ist daher nicht erforderlich, wenn `x:Type` mit geschweiften Klammern angezeigt wird.
+Die `x:Type` Markup Erweiterung ist die XAML-Entsprechung des c#- [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) Schlüssel Worts. Sie wird von der- [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) Klasse unterstützt, die eine Eigenschaft [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) mit dem Namen des Typs definiert, `string` die auf einen Klassen-oder Struktur Namen festgelegt ist. Die `x:Type` Markup Erweiterung gibt das- [`System.Type`](xref:System.Type) Objekt dieser Klasse oder Struktur zurück. `TypeName` ist die Content-Eigenschaft von `TypeExtension` `TypeName=` . Dies ist daher nicht erforderlich, wenn `x:Type` mit geschweiften Klammern angezeigt wird.
 
 In Xamarin.Forms gibt es mehrere Eigenschaften, die über Argumente des Typs verfügen `Type` . Beispiele hierfür sind die [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschaft von `Style` und das [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) -Attribut, mit dem Argumente in generischen Klassen angegeben werden. Der XAML-Parser führt den `typeof` Vorgang jedoch automatisch aus, und die `x:Type` Markup Erweiterung wird in diesen Fällen nicht verwendet.
 
@@ -330,8 +330,8 @@ Die Methode, die ausgeführt wird, wenn ein `Button` gedrückt wird, erstellt ei
 
 Die `x:Array` Markup Erweiterung ermöglicht es Ihnen, ein Array im Markup zu definieren. Sie wird von der- [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) Klasse unterstützt, die zwei Eigenschaften definiert:
 
-- `Type`vom Typ `Type` , der den Typ der Elemente im Array angibt.
-- `Items`vom Typ `IList` , bei dem es sich um eine Auflistung der Elemente selbst handelt. Dabei handelt es sich um die Content-Eigenschaft von `ArrayExtension` .
+- `Type` vom Typ `Type` , der den Typ der Elemente im Array angibt.
+- `Items` vom Typ `IList` , bei dem es sich um eine Auflistung der Elemente selbst handelt. Dabei handelt es sich um die Content-Eigenschaft von `ArrayExtension` .
 
 Die `x:Array` Markup Erweiterung selbst wird nie in geschweiften Klammern angezeigt. Stattdessen wird `x:Array` die Liste der Elemente von Start-und Endtags getrennt. Legen Sie die- `Type` Eigenschaft auf eine `x:Type` Markup Erweiterung fest.
 
@@ -460,16 +460,16 @@ Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische An
 
 Die `OnPlatform` Markup Erweiterung wird von der- [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) Klasse unterstützt, die die folgenden Eigenschaften definiert:
 
-- `Default`vom Typ `object` , die auf einen Standardwert festgelegt wird, der auf die Eigenschaften angewendet werden soll, die Plattformen darstellen.
-- `Android`vom Typ `object` , den Sie auf einen Wert festlegen, der auf Android angewendet werden soll.
-- `GTK`vom Typ `object` , den Sie auf einen Wert festlegen, der auf GTK-Plattformen angewendet werden soll.
-- `iOS`vom Typ `object` , den Sie auf einen Wert festlegen, der auf IOS angewendet werden soll.
-- `macOS`vom Typ `object` , den Sie auf einen Wert festlegen, der auf macOS angewendet werden soll.
-- `Tizen`vom Typ `object` , den Sie auf einen Wert festlegen, der auf die tizen-Plattform angewendet werden soll.
-- `UWP`vom Typ `object` , der auf einen Wert festgelegt wird, der auf die universelle Windows-Plattform angewendet werden soll.
-- `WPF`vom Typ `object` , der auf einen Wert festgelegt wird, der auf die Windows Presentation Foundation Plattform angewendet werden soll.
-- `Converter`vom Typ `IValueConverter` , die auf eine Implementierung festgelegt werden kann `IValueConverter` .
-- `ConverterParameter`vom Typ `object` , die auf einen Wert festgelegt werden kann, der an die-Implementierung übergeben werden soll `IValueConverter` .
+- `Default` vom Typ `object` , die auf einen Standardwert festgelegt wird, der auf die Eigenschaften angewendet werden soll, die Plattformen darstellen.
+- `Android` vom Typ `object` , den Sie auf einen Wert festlegen, der auf Android angewendet werden soll.
+- `GTK` vom Typ `object` , den Sie auf einen Wert festlegen, der auf GTK-Plattformen angewendet werden soll.
+- `iOS` vom Typ `object` , den Sie auf einen Wert festlegen, der auf IOS angewendet werden soll.
+- `macOS` vom Typ `object` , den Sie auf einen Wert festlegen, der auf macOS angewendet werden soll.
+- `Tizen` vom Typ `object` , den Sie auf einen Wert festlegen, der auf die tizen-Plattform angewendet werden soll.
+- `UWP` vom Typ `object` , der auf einen Wert festgelegt wird, der auf die universelle Windows-Plattform angewendet werden soll.
+- `WPF` vom Typ `object` , der auf einen Wert festgelegt wird, der auf die Windows Presentation Foundation Plattform angewendet werden soll.
+- `Converter` vom Typ `IValueConverter` , die auf eine Implementierung festgelegt werden kann `IValueConverter` .
+- `ConverterParameter` vom Typ `object` , die auf einen Wert festgelegt werden kann, der an die-Implementierung übergeben werden soll `IValueConverter` .
 
 > [!NOTE]
 > Der XAML-Parser ermöglicht [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) , dass die-Klasse als abgekürzt wird `OnPlatform` .
@@ -498,14 +498,14 @@ Dies ist das Programm, das ausgeführt wird:
 
 Die `OnIdiom` Markup Erweiterung ermöglicht es Ihnen, die Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts anzupassen, auf dem die Anwendung ausgeführt wird. Sie wird von der- [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) Klasse unterstützt, die die folgenden Eigenschaften definiert:
 
-- `Default`vom Typ `object` : Sie legen auf einen Standardwert fest, der auf die Eigenschaften angewendet werden soll, die die Geräte Idiome darstellen.
-- `Phone`vom Typ `object` , den Sie auf einen auf Smartphones anzuwendenden Wert festlegen.
-- `Tablet`vom Typ `object` , den Sie auf einen auf Tablets anzuwendenden Wert festlegen.
-- `Desktop`vom Typ `object` , den Sie auf einen auf Desktop Plattformen anzuwendenden Wert festlegen.
-- `TV`vom Typ `object` , den Sie auf einen Wert festlegen, der auf TV-Plattformen angewendet werden soll.
-- `Watch`vom Typ `object` , den Sie auf einen Wert festlegen, der auf Überwachungs Plattformen angewendet werden soll.
-- `Converter`vom Typ `IValueConverter` , die auf eine Implementierung festgelegt werden kann `IValueConverter` .
-- `ConverterParameter`vom Typ `object` , die auf einen Wert festgelegt werden kann, der an die-Implementierung übergeben werden soll `IValueConverter` .
+- `Default` vom Typ `object` : Sie legen auf einen Standardwert fest, der auf die Eigenschaften angewendet werden soll, die die Geräte Idiome darstellen.
+- `Phone` vom Typ `object` , den Sie auf einen auf Smartphones anzuwendenden Wert festlegen.
+- `Tablet` vom Typ `object` , den Sie auf einen auf Tablets anzuwendenden Wert festlegen.
+- `Desktop` vom Typ `object` , den Sie auf einen auf Desktop Plattformen anzuwendenden Wert festlegen.
+- `TV` vom Typ `object` , den Sie auf einen Wert festlegen, der auf TV-Plattformen angewendet werden soll.
+- `Watch` vom Typ `object` , den Sie auf einen Wert festlegen, der auf Überwachungs Plattformen angewendet werden soll.
+- `Converter` vom Typ `IValueConverter` , die auf eine Implementierung festgelegt werden kann `IValueConverter` .
+- `ConverterParameter` vom Typ `object` , die auf einen Wert festgelegt werden kann, der an die-Implementierung übergeben werden soll `IValueConverter` .
 
 > [!NOTE]
 > Der XAML-Parser ermöglicht [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) , dass die-Klasse als abgekürzt wird `OnIdiom` .
@@ -555,10 +555,10 @@ Die `FontImage` Markup Erweiterung ermöglicht es Ihnen, ein Schriftart Symbol i
 
 Die Markuperweiterung `FontImage` wird von der Klasse `FontImageExtension` unterstützt, in der die folgenden Eigenschaften definiert werden:
 
-- `FontFamily`vom Typ `string` , die Schriftfamilie, zu der das Schriftart Symbol gehört.
-- `Glyph`des Typs `string` , der Unicode-Zeichen Wert des Schriftart Symbols.
-- `Color`der Typ [`Color`](xref:Xamarin.Forms.Color) , die Farbe, die beim Anzeigen des Schriftart Symbols verwendet werden soll.
-- `Size`vom Typ `double` , die Größe des gerenderten Schriftart Symbols in geräteunabhängigen Einheiten. Der Standardwert ist 30. Außerdem kann diese Eigenschaft auf eine benannte Schriftgröße festgelegt werden.
+- `FontFamily` vom Typ `string` , die Schriftfamilie, zu der das Schriftart Symbol gehört.
+- `Glyph` des Typs `string` , der Unicode-Zeichen Wert des Schriftart Symbols.
+- `Color` der Typ [`Color`](xref:Xamarin.Forms.Color) , die Farbe, die beim Anzeigen des Schriftart Symbols verwendet werden soll.
+- `Size` vom Typ `double` , die Größe des gerenderten Schriftart Symbols in geräteunabhängigen Einheiten. Der Standardwert ist 30. Außerdem kann diese Eigenschaft auf eine benannte Schriftgröße festgelegt werden.
 
 > [!NOTE]
 > Im XAML-Parser kann die Klasse `FontImageExtension` zu `FontImage` abgekürzt werden.
@@ -580,7 +580,7 @@ Dies ist das Programm, das ausgeführt wird:
 
 Informationen zum Anzeigen von Schriftart Symbolen durch Angeben der Schriftart Symbol Daten in einem- `FontImageSource` Objekt finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 
-## <a name="appthemebinding-markup-extension"></a>Apptomebinding-Markup Erweiterung
+## <a name="appthemebinding-markup-extension"></a>Markuperweiterung AppThemeBinding
 
 Die `AppThemeBinding` Markup Erweiterung ermöglicht es Ihnen, eine zu verwendende Ressource anzugeben, z. b. ein Bild oder eine Farbe, basierend auf dem aktuellen Systemdesign.
 
@@ -638,7 +638,7 @@ Wenn Sie eine XAML-Markup Erweiterung gefunden haben, die in nicht verfügbar is
 
 - [Markup Erweiterungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Kapitel zu XAML-Markup Erweiterungen aus Xamarin.Forms Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md)

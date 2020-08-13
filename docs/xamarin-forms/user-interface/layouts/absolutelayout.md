@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
+title: Xamarin.Forms AbsoluteLayout
 description: Das Xamarin.Forms AbsoluteLayout wird zum Positionieren und Anpassen von Elementen mithilfe von expliziten Werten oder Werten verwendet, die proportional zur Größe des Layouts sind.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
@@ -10,14 +10,14 @@ ms.date: 08/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 696429e04775640d46add77ec6a4bbf6e69f675b
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134149"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181497"
 ---
-# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
+# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
 
@@ -55,7 +55,7 @@ Legen Sie die- `width` und/oder- `height` Werte auf die-Eigenschaft fest, um anz
 
 ## <a name="absolute-positioning-and-sizing"></a>Absolute Positionierung und Größenanpassung
 
-Standardmäßig wird eine [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) Position und Größe von untergeordneten Elementen, die absolute Werte verwenden, in geräteunabhängigen Einheiten angegeben, die explizit definieren, wo Sichten im Layout platziert werden sollen. Dies wird erreicht, indem der-Auflistung eines untergeordnete Elemente hinzugefügt `Children` `AbsoluteLayout` und die [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) angefügte-Eigenschaft für jedes untergeordnete Element auf absolute Position und/oder Größen Werte festgelegt wird.
+Standardmäßig werden untergeordnete [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) Positionen und Größen untergeordnete Elemente mit absoluten Werten in geräteunabhängigen Einheiten angegeben, die explizit definieren, wo untergeordnete Elemente im Layout platziert werden sollen. Dies wird erreicht, indem der-Auflistung eines untergeordnete Elemente hinzugefügt `Children` `AbsoluteLayout` und die [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) angefügte-Eigenschaft für jedes untergeordnete Element auf absolute Position und/oder Größen Werte festgelegt wird.
 
 > [!WARNING]
 > Die Verwendung absoluter Werte für die Positionierung und Größenanpassung von untergeordneten Elementen kann problematisch sein, da unterschiedliche Geräte unterschiedliche Bildschirmgrößen und Auflösungen aufweisen. Daher können die Koordinaten für den Mittelpunkt des Bildschirms auf einem Gerät auf anderen Geräten versetzt werden.
@@ -190,7 +190,7 @@ In diesem Beispiel wird jedes untergeordnete Element mithilfe von proportionalen
 
 Der folgende Screenshot zeigt das Layout, das sich ergibt:
 
-![Untergeordnete Elemente in einem AbsoluteLayout mithilfe von proportionalen positino-Werten](absolutelayout-images/proportional-position.png)
+![Untergeordnete Elemente in einem AbsoluteLayout mithilfe von proportionalen Positions Werten](absolutelayout-images/proportional-position.png)
 
 Der entsprechende c#-Code wird unten dargestellt:
 
@@ -236,6 +236,6 @@ In diesem Beispiel werden die Position und die Größe der einzelnen untergeordn
 ## <a name="related-links"></a>Verwandte Links
 
 - [AbsoluteLayout-Demos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
-- [Xamarin.FormsAngefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms Angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)
 - [Layout auswählen Xamarin.Forms](choose-layout.md)
 - [Optimieren der Xamarin.Forms App-Leistung](~/xamarin-forms/deploy-test/performance.md)

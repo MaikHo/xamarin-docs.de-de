@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fd657a3d55bd26b95e79e39540dcfe5b8bce08f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565420"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918592"
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Senden und Empfangen von Pushbenachrichtigungen mit den Azure Notification Hubs und Xamarin.Forms
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Senden und Empfangen von Pushbenachrichtigungen mit den Azure Notification Hubs und Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
@@ -77,7 +77,7 @@ Um Nachrichten erfolgreich zu empfangen, muss jede native Anwendung diese Schrit
 
 Diese Schritte werden für jede Plattform in den Abschnitten [Konfigurieren der Android-Anwendung für Benachrichtigungen](#configure-the-android-application-for-notifications) und [Konfigurieren von iOS für Benachrichtigungen](#configure-ios-for-notifications) ausführlicher beschrieben.
 
-## <a name="xamarinforms-application-functionality"></a>Funktionalität der Xamarin.Forms-Anwendung
+## <a name="no-locxamarinforms-application-functionality"></a>Funktionalität der Xamarin.Forms-Anwendung
 
 Die Xamarin.Forms-Beispielanwendung zeigt eine Liste mit Pushbenachrichtigungen an. Dies wird mithilfe der `AddMessage`-Methode erzielt, die die angegebene Pushbenachrichtigungsmeldung der Benutzeroberfläche hinzufügt. Diese Methode verhindert außerdem, dass doppelte Nachrichten zur Benutzeroberfläche hinzugefügt werden, und wird im Hauptthread ausgeführt, sodass Sie von jedem Thread aufgerufen werden kann. Der folgende Code veranschaulicht die `AddMessage`-Methode:
 
@@ -169,7 +169,7 @@ Die `receiver`-Elemente innerhalb des `application`-Elements ermöglichen der Ap
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>Überschreiben von `FirebaseMessagingService` für die Nachrichtenverarbeitung
+### <a name="override-no-locfirebasemessagingservice-to-handle-messages"></a>Überschreiben von `FirebaseMessagingService` für die Nachrichtenverarbeitung
 
 Erstellen Sie Unterklassen für die `FirebaseMessagingService`-Klasse, Um sich bei Firebase zu registrieren und Nachrichten zu verarbeiten. Dieselbe Anwendung definiert eine `FirebaseService`-Klasse, die Unterklassen von `FirebaseMessagingService` erstellt. Diese Klasse ist mit einem `IntentFilter`-Attribut gekennzeichnet, das den `com.google.firebase.MESSAGING_EVENT`-Filter enthält. Dieser Filter ermöglicht Android, eingehende Nachrichten zur Verarbeitung an diese Klasse zu übergeben:
 
@@ -281,7 +281,7 @@ Die lokale Benachrichtigung und das `Intent`-Beispiel erfordern, dass der Benutz
 > [!NOTE]
 > Die Android-Anwendung empfängt nur Pushbenachrichtigungen, wenn sie entweder im Hintergrund oder im Vordergrund ausgeführt wird. Um Pushbenachrichtigungen zu empfangen, wenn die Haupt-`Activity` nicht ausgeführt wird, müssen Sie einen Dienst implementieren, der den Rahmen dieses Beispiels sprengt. Weitere Informationen finden Sie unter [Erstellen von Android-Diensten](/xamarin/android/app-fundamentals/services/).
 
-### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>Hinzufügen eingehender Benachrichtigungen zur Xamarin.Forms-Benutzeroberfläche
+### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>Hinzufügen eingehender Benachrichtigungen zur Xamarin.Forms-Benutzeroberfläche
 
 Die `MainActivity`-Klasse muss die Berechtigung zum Verarbeiten von Benachrichtigungen und zum Verwalten eingehender Nachrichtendaten erhalten. Der folgende Code zeigt die vollständige `MainActivity`-Implementierung:
 
@@ -471,9 +471,9 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 ```
 
 > [!NOTE]
-> Die Registrierung für Remotebenachrichtigungen kann in Situationen, in denen keine Netzwerkverbindung besteht, fehlschlagen. Sie können die `FailedToRegisterForRemoveNotifications`-Methode außer Kraft setzen, um Registrierungsfehler zu behandeln.
+> Die Registrierung für Remotebenachrichtigungen kann in Situationen, in denen keine Netzwerkverbindung besteht, fehlschlagen. Sie können die `FailedToRegisterForRemoteNotifications`-Methode außer Kraft setzen, um Registrierungsfehler zu behandeln.
 
-### <a name="add-apns-notifications-to-xamarinforms-ui"></a>Hinzufügen von APNS-Benachrichtigungen zur Xamarin.Forms-Benutzeroberfläche
+### <a name="add-apns-notifications-to-no-locxamarinforms-ui"></a>Hinzufügen von APNS-Benachrichtigungen zur Xamarin.Forms-Benutzeroberfläche
 
 Wenn ein Gerät eine Remotebenachrichtigung empfängt, ruft iOS die `ReceivedRemoteNotification`-Methode auf. JSON-Code in einer eingehenden Nachricht wird in ein `NSDictionary`-Objekt konvertiert, und die Methode `ProcessNotification` extrahiert Werte aus dem Wörterbuch und sendet diese an die Xamarin.Forms-Instanz von `MainPage`. Die `ReceivedRemoteNotifications`-Methode wird außer Kraft gesetzt, damit `ProcessNotification` aufgerufen wird, wie im folgenden Code gezeigt:
 
