@@ -6,18 +6,18 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/18/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138085"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917555"
 ---
-# <a name="xamarinforms-shell-search"></a>Suche in der Xamarin.Forms-Shell
+# <a name="no-locxamarinforms-shell-search"></a>Suche in der Xamarin.Forms-Shell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -224,6 +224,7 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 - `HorizontalTextAlignment` vom Typ `TextAlignment`: horizontale Ausrichtung des Texts im Suchfeld.
 - `PlaceholderColor` vom Typ `Color`: Farbe des Platzhaltertexts im Suchfeld.
 - `TextColor` vom Typ `Color`: Farbe des Texts im Suchfeld.
+- `TextTransform` vom Typ `TextTransform`: Bestimmt die Groß-/Kleinschreibung des Suchfeldtexts.
 - `VerticalTextAlignment` vom Typ `TextAlignment`: Vertikale Ausrichtung des Texts im Suchfeld.
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler-Tastatur
@@ -320,6 +321,7 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 - `SelectedItem` vom Typ `object`: das in den Suchergebnissen ausgewählte Element. Diese Eigenschaft ist schreibgeschützt; Standardwert ist `null`.
 - `ShowsResults` vom Typ `bool`:Gibt an, ob bei der Texteingabe Suchergebnisse im Vorschlagsbereich zu erwarten sind. Der Standardwert ist `false`.
 - `TextColor` vom Typ `Color`: Farbe des Texts im Suchfeld.
+- `TextTransform` vom Typ `TextTransform`: Bestimmt die Groß-/Kleinschreibung des Suchfeldtexts.
 
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.
 

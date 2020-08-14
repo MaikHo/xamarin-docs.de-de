@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
+ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929280"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88029720"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (Preview)
 
@@ -73,6 +73,7 @@ Sie können auch das Präprozessorsymbol `HOTRESTART` verwenden, um die Ausführ
 - Storyboard- und XIB-Dateien werden nicht unterstützt, und die Anwendung kann abstürzen, wenn sie versucht, diese zur Laufzeit zu laden. Verwenden Sie das Präprozessorsymbol `HOTRESTART`, um die Ausführung dieses Codes zu verhindern.
 - Statische iOS-Bibliotheken und -Frameworks werden nicht unterstützt. Es kann zu Laufzeitfehlern oder Abstürzen kommen, wenn Ihre App versucht, diese zu laden. Verwenden Sie das Präprozessorsymbol `HOTRESTART`, um die Ausführung dieses Codes zu verhindern. Dynamische iOS-Bibliotheken werden unterstützt.
 - Sie können Xamarin Hot Restart nicht verwenden, um App-Bundles für die Veröffentlichung zu erstellen. Sie benötigen weiterhin einen Mac, um eine vollständige Kompilierung, Signierung und Bereitstellung Ihrer Anwendung für die Produktion durchzuführen.
+- Ressourcenkataloge werden derzeit nicht unterstützt. Wenn Sie Hot Restart verwenden, werden in Ihrer App Standardsymbol und Standardstartbildschirm für Xamarin-Apps angezeigt. Bei Kopplung mit oder Entwicklung auf einem Mac funktionieren Ihre Ressourcenkataloge.
 
 ## <a name="troubleshoot"></a>Problembehandlung
 

@@ -1,6 +1,6 @@
 ---
-title: 'title: "Hinzufügen der Gestenerkennung für Schwenkbewegungen" description: "In diesem Artikel wird erläutert, wie Sie mit einer Schwenkbewegung ein Bild horizontal und vertikal schwenken, sodass der gesamte Bildinhalt in einem Anzeigebereich angezeigt werden kann, der kleiner als die Bildabmessungen ist."'
-description: 'ms.prod: xamarin ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/21/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Hinzufügen einer Schwenkgestenerkennung
+description: In diesem Artikel wird erläutert, wie Sie mit einer Schwenkbewegung ein Bild horizontal und vertikal schwenken, sodass der gesamte Bildinhalt in einem Anzeigebereich angezeigt werden kann, der kleiner als die Bildabmessungen ist.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 886191725421a754e696409deb7a3cca0f6ea923
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917690"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Schwenkbewegungen
+# <a name="add-a-pan-gesture-recognizer"></a>Hinzufügen einer Schwenkgestenerkennung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 

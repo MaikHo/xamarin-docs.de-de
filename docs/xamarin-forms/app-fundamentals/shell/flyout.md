@@ -6,18 +6,18 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/10/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946259"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917844"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell-Flyout
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell-Flyout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -234,6 +234,7 @@ Die `FlyoutItem`-Klasse umfasst die folgenden Eigenschaften, die die Darstellung
 - `IsChecked` vom Typ `boolean`: Definiert, ob das Element im Flyout derzeit ausgewählt ist.
 - `IsEnabled` vom Typ `boolean`: Definiert, ob das Element im Chrom ausgewählt werden kann.
 - `IsTabStop` vom Typ `bool`: Gibt an, ob ein `FlyoutItem`-Objekt in der Tabstoppnavigation enthalten ist. Der Standardwert ist `true`, und wenn er `false` ist, wird das `FlyoutItem` von der Infrastruktur der Tabstoppnavigation ignoriert, unabhängig davon, ob ein `TabIndex` festgelegt ist.
+- `IsVisible` vom Typ `bool` gibt an, ob das `FlyoutItem` im Flyoutmenü ausgeblendet ist. Der Standardwert lautet `true`.
 - `TabIndex` vom Typ `int`: Gibt an, in welcher Reihenfolge die `FlyoutItem`-Objekte den Fokus erhalten, wenn der Benutzer durch Drücken der TAB-TASTE durch Elemente navigiert. Der Standardwert der Eigenschaft ist 0.
 - `Title` vom Typ `string`: der Titel, der in der Benutzeroberfläche angezeigt wird.
 - `Route` vom Typ `string`: die Zeichenfolge, mit der das Element adressiert wird.
@@ -249,6 +250,46 @@ Darüber hinaus stellt die `FlyoutItem`-Klasse die folgenden überschreibbaren M
 - `OnTabStopPropertyChanged`: Wird aufgerufen, wenn sich die `IsTabStop`-Eigenschaft ändert.
 - `TabIndexDefaultValueCreator`: Gibt einen `int`-Wert zurück und wird aufgerufen, um den Standardwert der `TabIndex`-Eigenschaft festzulegen.
 - `TabStopDefaultValueCreator`: Gibt einen `bool`-Wert zurück und wird aufgerufen, um den Standardwert der `TabStop`-Eigenschaft festzulegen.
+
+## <a name="flyout-backdrop"></a>Flyouthintergrund
+
+Um den Hintergrund des Flyouts anzugeben, das Aussehen der Flyoutüberlagerung, kann die angefügte Eigenschaft `Shell.FlyoutBackdrop` auf `Brush` festgelegt werden:
+
+```xaml
+<Shell ...
+       FlyoutBackdrop="Silver">
+    ...
+</Shell>
+```
+
+In diesem Beispiel wird der Flyouthintergrund mit einem silbernen `SolidColorBrush` gezeichnet.
+
+> [!IMPORTANT]
+> Die angefügte Eigenschaft `FlyoutBackdrop` kann für jedes beliebige Shellelement festgelegt werden, wird jedoch nur angewendet, wenn sie auf `Shell`-, `FlyoutItem`- oder `TabBar`-Objekte festgelegt wird.
+
+Das folgende Beispiel zeigt, wie der Flyouthintergrund auf einem `FlyoutItem` auf einen `LinearGradientBrush` festgelegt wird:
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...>
+      <Shell.FlyoutBackdrop>
+          <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+              <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+              <GradientStop Color="#E94057"
+                            Offset="0.6" />
+              <GradientStop Color="#F27121"
+                            Offset="1.0" />
+          </LinearGradientBrush>
+      </Shell.FlyoutBackdrop>
+      ...
+    </FlyoutItem>
+    ...
+</Shell>
+```
+
+Weitere Informationen zu Pinseln finden Sie unter [Xamarin.Forms-Pinsel](~/xamarin-forms/user-interface/brushes/index.md).
 
 ## <a name="flyout-vertical-scroll"></a>Flyout mit vertikalem Scrollen
 
@@ -652,3 +693,4 @@ Darüber hinaus können benutzerdefinierte Formatklassen definiert und auf `Flyo
 - [Xaminals (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms-Formatklassen](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.Forms-Manager für den Visualzustand](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms-Pinsel](~/xamarin-forms/user-interface/brushes/index.md)

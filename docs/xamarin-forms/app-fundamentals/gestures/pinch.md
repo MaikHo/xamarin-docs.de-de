@@ -1,5 +1,5 @@
 ---
-title: Hinzufügen einer Gestenerkennung für Zusammendrückbewegungen
+title: Hinzufügen einer Zusammendrückgestenerkennung
 description: In diesem Artikel wird erläutert, wie Sie die Zusammendrückbewegung verwenden, um den interaktiven Zoom eines Bildes an der Position der Zusammendrückbewegung auszuführen.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a3405e3bff1b500bcf0f7fab6bea1a888f2d4604
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137851"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918285"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Zusammendrückbewegungen
+# <a name="add-a-pinch-gesture-recognizer"></a>Hinzufügen einer Zusammendrückgestenerkennung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 

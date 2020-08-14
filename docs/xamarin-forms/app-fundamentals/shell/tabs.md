@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426889"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918624"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
@@ -184,6 +184,7 @@ Die `ShellContent`-Klasse umfasst die folgenden Eigenschaften, die die Darstellu
 - `Icon` vom Typ `ImageSource`: Definiert das Symbol, das in Teilen des Chroms angezeigt wird, die nicht das Flyout sind.
 - `IsChecked` vom Typ `boolean`: Definiert, ob das Element im Flyout derzeit ausgewählt ist.
 - `IsEnabled` vom Typ `boolean`: Definiert, ob das Element im Chrom ausgewählt werden kann.
+- `IsVisible` vom Typ `bool`: Gibt an, ob der `ShellContent` in allen Benutzeroberflächenstrukturen ausgeblendet ist. Der Standardwert lautet `true`.
 - `MenuItems` vom Typ `MenuItemCollection`: die Menüelemente, die im Flyout angezeigt werden, wenn dieses `ShellContent`-Objekt die angezeigte Seite ist.
 - `Title` vom Typ `string`: der Titel, der in der Benutzeroberfläche angezeigt wird.
 

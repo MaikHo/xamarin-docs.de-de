@@ -1,5 +1,5 @@
 ---
-title: Hinzufügen einer Gestenerkennung für Tippbewegungen
+title: Hinzufügen einer Tippgestenerkennung
 description: In diesem Artikel wird beschrieben, wie die Tippbewegung in einer Xamarin.Forms-App für die Tipperkennung verwendet wird. Die Tipperkennung wurde mit der Klasse TapGestureRecognizer implementiert.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fddee777ac74cb3ca50ebd0dca809d4a2f1412ab
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570608"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918426"
 ---
-# <a name="adding-a-tap-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Tippbewegungen
+# <a name="add-a-tap-gesture-recognizer"></a>Hinzufügen einer Tippgestenerkennung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
