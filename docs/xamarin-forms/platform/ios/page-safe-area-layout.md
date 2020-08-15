@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 920246e9cbbe85c606969333ccb05d3c87dcef66
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933712"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228585"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Handbuch zum Safe Area Layout unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische wird verwendet, um sicherzustellen, dass der Seiten Inhalt in einem Bereich des Bildschirms positioniert ist, der für alle Geräte, die IOS 11 und höher verwenden, sicher ist. Insbesondere wird sichergestellt, dass der Inhalt nicht von abgerundeten Geräte Ecken, dem Start Indikator oder dem Sensorgehäuse auf einem iPhone X abgeschnitten wird. Sie wird in XAML verwendet, indem die `Page.UseSafeArea` angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
@@ -53,7 +53,7 @@ Das Ergebnis ist, dass der Seiten Inhalt in einem Bereich des Bildschirms positi
 > [!NOTE]
 > Der von Apple definierte sichere Bereich wird in verwendet Xamarin.Forms , um die [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) -Eigenschaft festzulegen, und überschreibt alle vorherigen Werte dieser Eigenschaft, die festgelegt wurden.
 
-Der sichere Bereich kann angepasst werden, indem der [`Thickness`](xref:Xamarin.Forms.Thickness) Wert mit der- `Page.SafeAreaInsets` Methode aus dem- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace abgerufen wird. Sie kann dann nach Bedarf geändert und der- `Padding` Eigenschaft im Seitenkonstruktor erneut zugewiesen werden oder [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) außer Kraft gesetzt werden:
+Der sichere Bereich kann angepasst werden, indem der [`Thickness`](xref:Xamarin.Forms.Thickness) Wert mit der- `Page.SafeAreaInsets` Methode aus dem- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace abgerufen wird. Sie kann dann wie erforderlich geändert und der `Padding` Eigenschaft in der außer Kraft Setzung erneut zugewiesen werden [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) :
 
 ```csharp
 protected override void OnAppearing()
