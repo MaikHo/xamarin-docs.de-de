@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 6352de1483aea49a628cbb30d104906fde767afa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8c4ad31d91e6f9e4415309eee6c3da8a095dc097
+ms.sourcegitcommit: 80bd4d74812d2c086a164323b72a14662276d302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031954"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608606"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Gruppierte Benachrichtigungen in xamarin. IOS
 
@@ -30,7 +30,7 @@ Code Ausschnitte in dieser Anleitung stammen aus dieser Beispiel-app.
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>Autorisierung anfordern und Vordergrund Benachrichtigungen zulassen
 
-Bevor eine APP lokale Benachrichtigungen senden kann, muss Sie eine entsprechende Berechtigung anfordern. Im [`AppDelegate`](xref:UIKit.UIApplicationDelegate)der Beispiel-APP wird diese Berechtigung von der [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) -Methode angefordert:
+Bevor eine APP lokale Benachrichtigungen senden kann, muss Sie eine entsprechende Berechtigung anfordern. In der Beispiel-APP [`AppDelegate`](xref:UIKit.UIApplicationDelegate) fordert die- [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) Methode diese Berechtigung an:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,17 +46,17 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Der [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (oben festgelegte) für eine [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) entscheidet, ob eine Vordergrund-App eine eingehende Benachrichtigung anzeigen soll, indem der an [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))weiter gegebene Abschluss Handler aufgerufen wird:
+Der [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (oben festgelegte) für einen [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) entscheidet, ob eine Vordergrund-App eine eingehende Benachrichtigung anzeigen soll, indem der an weiter gegebene Abschluss Handler aufgerufen wird [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})) :
 
 ```csharp
-[Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
+[Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
 public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, System.Action<UNNotificationPresentationOptions> completionHandler)
 {
     completionHandler(UNNotificationPresentationOptions.Alert);
 }
 ```
 
-Der [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions) -Parameter gibt an, dass die APP die Warnung anzeigen soll, aber keinen Sound abspielen oder einen Badge aktualisieren soll.
+Der- [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions) Parameter gibt an, dass die APP die Warnung anzeigen soll, aber keinen Sound abspielen oder einen Badge aktualisieren soll.
 
 ## <a name="threaded-notifications"></a>Thread Benachrichtigungen
 
@@ -81,7 +81,7 @@ Zum Senden einer Thread Benachrichtigung wird in der Beispiel-App Folgendes ange
 
 - Überprüft, ob die APP über eine Autorisierung zum Senden einer Benachrichtigung verfügt.
 - Erstellt eine [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-Objekt für den Inhalt der Benachrichtigung und legt dessen [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+Objekt für den Inhalt der Benachrichtigung und legt seine [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 an den oben erstellten Thread Bezeichner.
 - Erstellt eine Anforderung und plant die Benachrichtigung:
 
@@ -122,11 +122,11 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 Alle Benachrichtigungen aus derselben App mit dem gleichen Thread Bezeichner werden in derselben Benachrichtigungs Gruppe angezeigt.
 
 > [!NOTE]
-> Fügen Sie der JSON-Nutzlast der Benachrichtigung den `thread-id` Schlüssel hinzu, um einen Thread Bezeichner für eine Remote Benachrichtigung festzulegen. Weitere Informationen finden Sie in der Apple-Dokumentation zum [Erstellen eines Remote Benachrichtigungs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) Dokuments.
+> Fügen Sie der JSON-Nutzlast der Benachrichtigung den Schlüssel hinzu, um einen Thread Bezeichner für eine Remote Benachrichtigung festzulegen `thread-id` . Weitere Informationen finden Sie in der Apple-Dokumentation zum [Erstellen eines Remote Benachrichtigungs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) Dokuments.
 
 ### <a name="summaryargument"></a>Summaryargument
 
-`SummaryArgument` gibt an, wie sich eine Benachrichtigung auf den Übersichts Text auswirkt, der in der unteren linken Ecke einer Benachrichtigungs Gruppe angezeigt wird, zu der die Benachrichtigung gehört. IOS aggregiert einen Zusammenfassungs Text aus Benachrichtigungen in derselben Gruppe, um eine allgemeine Übersichts Beschreibung zu erstellen.
+`SummaryArgument` Gibt an, wie sich eine Benachrichtigung auf den Übersichts Text auswirkt, der in der unteren linken Ecke einer Benachrichtigungs Gruppe angezeigt wird, zu der die Benachrichtigung gehört. IOS aggregiert einen Zusammenfassungs Text aus Benachrichtigungen in derselben Gruppe, um eine allgemeine Übersichts Beschreibung zu erstellen.
 
 In der Beispiel-APP wird der Autor der Nachricht als Zusammenfassungs Argument verwendet. Bei diesem Ansatz kann der Zusammenfassungs Text für eine Gruppe von sechs Benachrichtigungen mit Alice **5 weitere Benachrichtigungen von Alice und mir**sein.
 
@@ -134,8 +134,8 @@ In der Beispiel-APP wird der Autor der Nachricht als Zusammenfassungs Argument v
 
 Jede Tap-Schaltfläche zur **Termin Erinnerung** der Beispiel-App sendet eine der verschiedenen Benachrichtigungen zur Termin Erinnerung. Da diese Erinnerungen nicht Thread abhängig sind, werden Sie auf dem Sperrbildschirm und im Benachrichtigungs Center in der Benachrichtigungs Gruppe auf Anwendungsebene angezeigt.
 
-Um eine unthread Benachrichtigung zu senden, verwendet die `ScheduleUnthreadedNotification`-Methode der Beispiel-APP einen ähnlichen Code wie oben.
-Die `ThreadIdentifier` für das `UNMutableNotificationContent`-Objekt wird jedoch nicht festgelegt.
+Um eine unthread Benachrichtigung zu senden, verwendet die-Methode der Beispiel-APP einen `ScheduleUnthreadedNotification` ähnlichen Code wie oben.
+Es wird jedoch nicht `ThreadIdentifier` für das Objekt festgelegt `UNMutableNotificationContent` .
 
 ## <a name="related-links"></a>Verwandte Links
 
