@@ -1,6 +1,6 @@
 ---
-title: 'title: "Zeichenfolgen- und Imagelokalisierung in Xamarin.Forms" description: "Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden."'
-description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date: 11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Zeichenfolgen- und Bildlokalisierung in Xamarin.Forms
+description: Xamarin.Forms-Apps können mit .NET-Ressourcendateien lokalisiert werden.
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -11,14 +11,14 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d68227fbf4a4c9db8f4ba8858fdeda6637ce4732
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137601"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228604"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Zeichenfolgen- und Bildlokalisierung für Xamarin.Forms
+# <a name="no-locxamarinforms-string-and-image-localization"></a>Zeichenfolgen- und Bildlokalisierung für Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
@@ -30,7 +30,7 @@ Lokalisierung ist der Prozess, bei dem eine Anwendung an die jeweilige Sprache o
 
 Zum Lokalisieren von Xamarin.Forms-Anwendungen mit Ressourcendateien müssen Sie die folgenden Schritte ausführen:
 
-1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetzten Text
+1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetztem Text
 1. [Angeben der Standardkultur](#specify-the-default-culture) im freigegebenen Projekt
 1. [Lokalisieren von Text in Xamarin.Forms](#localize-text-in-xamarinforms).
 1. [Lokalisieren von Bildern](#localize-images) basierend auf Kultureinstellungen für jede Plattform
@@ -59,7 +59,7 @@ Nachdem die Datei hinzugefügt wurde, können Zeilen für jede Textressource hin
 
 Die Dropdowneinstellung **Zugriffsmodifizierer** bestimmt, wie Visual Studio die zum Zugriff auf Ressourcen verwendete Klasse generiert. Wenn der Zugriffsmodifizierer auf **öffentlich** oder **intern** festgelegt wird, wird eine generierte Klasse mit angegebener Zugriffsebene erstellt. Wenn der Zugriffsmodifizierer auf **Keine Codegenerierung** festgelegt wird, wird keine Klassendatei erstellt. Die Standardressourcendatei sollte konfiguriert werden, um eine Klassendatei zu generiert. Das führt dazu, dass eine Datei mit der Erweiterung **.designer.cs** zum Projekt hinzugefügt wird.
 
-Nachdem die Standardressourcendatei erstellt wurde, können für jede Kultur, die von der Anwendung unterstützt wird, zusätzliche Dateien erstellt werden. Jede zusätzliche Ressourcendatei sollte die Übersetzungskultur in den Dateinamen einschließen und den **Zugriffsmodifizierer** aufweisen, der auf **Keine Codegenerierung** festgelegt ist. 
+Nachdem die Standardressourcendatei erstellt wurde, können für jede Kultur, die von der Anwendung unterstützt wird, zusätzliche Dateien erstellt werden. Jede zusätzliche Ressourcendatei sollte die Übersetzungskultur in den Dateinamen einschließen und den **Zugriffsmodifizierer** aufweisen, der auf **Keine Codegenerierung** festgelegt ist.
 
 Zur Runtime versucht die Anwendung, eine Ressourcenanforderung in der Spezifikationsreihenfolge aufzulösen. Wenn die Gerätekultur z. B. **en-US** ist, sucht die Anwendung nach Ressourcendateien in dieser Reihenfolge:
 
@@ -149,7 +149,37 @@ Wenn eine Standardressourcendatei erstellt und die Standardkultur in der **Assem
 
 Weitere Informationen zu Ressourcendateien finden Sie unter [Erstellen von Ressourcendateien für .NET-Apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
 
-## <a name="localize-text-in-xamarinforms"></a>Lokalisieren von Text in Xamarin.Forms
+## <a name="specify-supported-languages-on-ios"></a>Angeben unterstützter Sprachen unter iOS
+
+Unter iOS müssen Sie alle unterstützten Sprachen in der Datei **Info.plist** für Ihr Projekt deklarieren. Verwenden Sie in der Datei **Info.plist** die **Quellansicht**, um ein Array für den `CFBundleLocalizations`-Schlüssel festzulegen, und geben Sie Werte an, die den RESX-Dateien entsprechen. Stellen Sie außerdem sicher, dass Sie eine erwartete Sprache über den `CFBundleDevelopmentRegion`-Schlüssel festlegen:
+
+![Screenshot des Info.plist-Editors, der den Abschnitt „Localizations“ (Lokalisierungen) anzeigt](text-images/info-plist.png)
+
+Stattdessen können Sie auch die Datei **Info.plist** in einem XML-Editor öffnen und Folgendes hinzufügen:
+
+```xml
+<key>CFBundleLocalizations</key>
+<array>
+    <string>de</string>
+    <string>es</string>
+    <string>fr</string>
+    <string>ja</string>
+    <string>pt</string> <!-- Brazil -->
+    <string>pt-PT</string> <!-- Portugal -->
+    <string>ru</string>
+    <string>zh-Hans</string>
+    <string>zh-Hant</string>
+</array>
+<key>CFBundleDevelopmentRegion</key>
+<string>en</string>
+```
+
+> [!NOTE]
+> Apple behandelt Portugiesisch anders als Sie vielleicht erwarten würden. Weitere Informationen finden Sie unter [Hinzufügen von Sprachen](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2) auf developer.apple.com.
+
+Weitere Informationen finden Sie unter [Angeben der Standardsprache und der unterstützten Sprachen in „Info.plist“](~/ios/app-fundamentals/localization/index.md#specifying-default-and-supported-languages-in-infoplist).
+
+## <a name="localize-text-in-no-locxamarinforms"></a>Lokalisieren von Text in Xamarin.Forms
 
 Text wird in Xamarin.Forms lokalisiert, indem die generierte `AppResources`-Klasse verwendet wird. Diese Klasse wird basierend auf dem Namen der Standardressourcendatei benannt. Da die Ressourcendatei des Beispielprojekts **AppResources.cs** heißt, generiert Visual Studio eine passende Klasse mit dem Namen `AppResources`. Statische Eigenschaften werden in der `AppResources`-Klasse für jede Zeile in der Ressourcendatei generiert. Die folgenden statischen Eigenschaften werden in der `AppResources`-Klasse der Beispielanwendung generiert:
 
@@ -178,19 +208,19 @@ public LocalizedCodePage()
         Text = AppResources.NotesLabel,
         // ...
     };
-    
+
     Entry notesEntry = new Entry
     {
         Placeholder = AppResources.NotesPlaceholder,
         //...
     };
-    
+
     Button addButton = new Button
     {
         Text = AppResources.AddButton,
         // ...
     };
-    
+
     Content = new StackLayout
     {
         Children = {

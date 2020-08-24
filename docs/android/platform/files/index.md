@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303666"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186173"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Dateispeicherung und Dateizugriff mit Xamarin.Android
 
@@ -26,7 +26,7 @@ Dies ist eine konzeptionelle Unterteilung, sie bezieht sich nicht unbedingt auf 
 1. **.NET-APIs (bereitgestellt von Mono und eingeschlossen in Xamarin.Android)** –  dies schließt die von [Xamarin.Essentials](~/essentials/index.md?context=xamarin/android) bereitgestellten [Dateisystemhilfsprogramme](~/essentials/file-system-helpers.md?context=xamarin/android) ein. Die .NET-APIs bieten die beste plattformübergreifende Kompatibilität und stehen in diesem Leitfaden deshalb im Vordergrund.
 1. **Native Java-APIs für den Dateizugriff (bereitgestellt von Java und eingeschlossen in Xamarin.Android)** – Java stellt eigene APIs zum Lesen und Schreiben von Dateien bereit. Diese APIs sind eine akzeptable Alternative zu den .NET-APIs, jedoch spezifisch für Android und nicht für Anwendungen geeignet, die plattformübergreifend eingesetzt werden sollen.
 
-Lese- und Schreibvorgänge für Dateien erfolgen in Xamarin.Android in nahezu gleicher Weise wie in jeder anderen .NET-Anwendung. Die Xamarin.Android-App bestimmt den Pfad zur Datei, die bearbeitet werden soll, und verwendet anschließend .NET-Standardausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zum externen und internen Speicher je nach Gerät oder Android-Version unterscheiden können, wird von einer Hartcodierung der Dateipfade abgeraten. Verwenden Sie stattdessen die Xamarin.Android-APIs, um den Pfad zu den Dateien zu ermitteln. Hierbei machen die .NET-APIs zum Lesen und Schreiben von Dateien die nativen Android-APIs verfügbar, um den Pfad zu Dateien im internen oder externen Speicher zu bestimmen.
+Das Lesen aus und Schreiben in Dateien erfolgt in Xamarin.Android nahezu identisch wie in jeder anderen .NET-Anwendung. Die Xamarin.Android-App bestimmt den Pfad zur Datei, die bearbeitet werden soll, und verwendet anschließend .NET-Standardausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zu externem und internem Speicher von Gerät zu Gerät oder von Android-Version zu Android-Version unterscheiden können, empfiehlt es sich nicht, die Dateipfade hart zu codieren. Verwenden Sie stattdessen die Xamarin.Android-APIs, um den Pfad zu den Dateien zu ermitteln. Hierbei machen die .NET-APIs zum Lesen und Schreiben von Dateien die nativen Android-APIs verfügbar, um den Pfad zu Dateien im internen oder externen Speicher zu bestimmen.
 
 Vor einer Erläuterung der APIs für den Dateizugriff ist es wichtig, einige Details im Zusammenhang mit dem internen und externen Speicher zu verstehen. Diese werden im nächsten Abschnitt erläutert.
 
@@ -64,7 +64,7 @@ Im vorliegenden Dokument wird auf das interne Speicherverzeichnis als _INTERNER\
 
 Um die gemeinsame Nutzung von Code zu maximieren, sollten Xamarin.Android-Apps (oder auf Xamarin.Android ausgerichtete Xamarin.Forms-Apps) die [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*)-Methode verwenden. In Xamarin.Android gibt diese Methode eine Zeichenfolge für ein Verzeichnis zurück, das sich am selben Speicherort befindet wie `Android.Content.Context.FilesDir`. Diese Methode erwartet eine Enumeration (`System.Environment.SpecialFolder`). Mit dieser wird ein Satz von Enumerationskonstanten identifiziert, die die Pfade zu speziellen, vom Betriebssystem verwendeten Ordnern darstellen. Nicht alle `System.Environment.SpecialFolder`-Werte werden einem gültigen Verzeichnis in Xamarin.Android zugeordnet. Die folgende Tabelle beschreibt, welcher Pfad für einen vorhandenen Wert von `System.Environment.SpecialFolder` erwartet werden kann:
 
-| System.Environment.SpecialFolder | Pfad  |
+| System.Environment.SpecialFolder | `Path`  |
 |----------------------|---|
 | `ApplicationData` | **_INTERNER\_SPEICHER_/.config** |
 | `Desktop` | **_INTERNER\_SPEICHER_/Desktop** |
@@ -74,6 +74,10 @@ Um die gemeinsame Nutzung von Code zu maximieren, sollten Xamarin.Android-Apps (
 | `MyPictures` | **_INTERNER\_SPEICHER_/Pictures** |
 | `MyVideos` | **_INTERNER\_SPEICHER_/Videos** |
 | `Personal` | **_INTERNER\_SPEICHER_** |
+| `Fonts` | **_INTERNAL\_STORAGE_/.fonts** |
+| `Templates` | **_INTERNAL\_STORAGE_/Templates** |
+| `CommonApplicationData` | **/usr/share** |
+| `CommonApplicationData` | **/usr/share** |
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lesen oder Schreiben von Dateien in den internen Speicher
 
@@ -141,7 +145,7 @@ Private Dateien werden nicht als Medien angezeigt, die freigegeben werden könne
 
 Öffentliche Dateien werden vom `MediaStore` erfasst. Verzeichnisse, die eine 0-Byte-Datei namens **.NOMEDIA** aufweisen, werden von `MediaStore` nicht erfasst.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 * [Externer Speicher](~/android/platform/files/external-storage.md)
 * [Speichern von Dateien im Gerätespeicher](https://developer.android.com/training/data-storage/files)

@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 069c40b74876bea1d3a0c8fca23b3d90c4b91635
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
+ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510678"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88514628"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
@@ -45,13 +45,15 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
 2. Öffnen Sie die Datei **Info.plist**.
 
-3. Wählen Sie im Abschnitt **Signierung** die Option **Automatische Bereitstellung** aus:
+3. Wählen Sie die Registerkarte **Anwendung** aus.
+
+4. Wählen Sie im Abschnitt **Signierung** die Option **Automatische Bereitstellung** aus:
 
     ![Dropdownliste zur Teamauswahl](automatic-provisioning-images/image2.png)
 
-4. Wählen Sie Ihr Team aus der Dropdownliste **Team** aus.
+5. Wählen Sie Ihr Team aus der Dropdownliste **Team** aus.
 
-5. Nach wenigen Sekunden werden ein Signaturzertifikat und ein Bereitstellungsprofil erstellt:
+6. Nach wenigen Sekunden werden ein Signaturzertifikat und ein Bereitstellungsprofil erstellt:
 
     ![Erfolgreich erstelltes Zertifikat und Profil](automatic-provisioning-images/image5.png)
 
@@ -93,7 +95,7 @@ In Visual Studio für Mac und Visual Studio 2019 (Version 16.5 oder höher) wi
 In einigen Fällen erfordern die Berechtigungen einer App eine explizite App-ID. Die folgenden Berechtigungen unterstützen keine Platzhalter-App-IDs:
 
 - App-Gruppen
-- Zugehörige Domänen
+- Zugehörige Bereiche
 - Apple Pay
 - Game Center
 - HealthKit
@@ -114,7 +116,7 @@ Wenn Ihre App eine dieser Berechtigungen verwendet, versucht Visual Studio, eine
 - Wenn die automatische Bereitstellung nicht erfolgreich ist und die Fehlermeldung `Authentication Service Is Unavailable` angezeigt wird, melden Sie sich entweder bei [App Store Connect](https://appstoreconnect.apple.com/) oder [appleid.apple.com](https://appleid.apple.com) an, um zu überprüfen, ob Sie die neuesten Dienstvereinbarungen akzeptiert haben.
 - Falls die Fehlermeldung `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.` angezeigt wird, müssen Sie sicherstellen, dass das ausgewählte Team über eine aktive kostenpflichtige Mitgliedschaft beim Apple Developer Program verfügt. Informationen zur Verwendung eines kostenpflichtigen Apple Developer-Kontos finden Sie im Leitfaden [Kostenlose Bereitstellung für Xamarin.iOS-Apps](~/ios/get-started/installation/device-provisioning/free-provisioning.md).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Free Provisioning (Kostenlose Bereitstellung)](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
