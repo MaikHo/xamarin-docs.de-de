@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce4614f7b21a42945a8541f2b18877e75a200f1a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935114"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052772"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -96,7 +96,7 @@ namespace MonkeyNotification
     public class NotificationService : UNNotificationServiceExtension
     {
         #region Constructors
-        public NotificationService ()
+        public NotificationService (IntPtr handle) : base(handle)
         {
         }
         #endregion
@@ -192,9 +192,9 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Benutzeroberfläche f�
 
 Wenn die Erweiterung für Benachrichtigungs Inhalte der Projekt Mappe hinzugefügt wird, werden im Projekt der Erweiterung drei Dateien erstellt:
 
-1. `NotificationViewController.cs`: Dies ist der Haupt Ansichts Controller für die Erweiterung für Benachrichtigungs Inhalte.
-2. `MainInterface.storyboard`: Der Entwickler legt die sichtbare Benutzeroberfläche für die Erweiterung für Benachrichtigungs Inhalte im IOS-Designer fest.
-3. `Info.plist`-Steuert die Konfiguration der Erweiterung für Benachrichtigungs Inhalte.
+1. `NotificationViewController.cs` : Dies ist der Haupt Ansichts Controller für die Erweiterung für Benachrichtigungs Inhalte.
+2. `MainInterface.storyboard` : Der Entwickler legt die sichtbare Benutzeroberfläche für die Erweiterung für Benachrichtigungs Inhalte im IOS-Designer fest.
+3. `Info.plist` -Steuert die Konfiguration der Erweiterung für Benachrichtigungs Inhalte.
 
 Die Standard `NotificationViewController.cs` Datei sieht wie folgt aus:
 
