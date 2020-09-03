@@ -1,6 +1,6 @@
 ---
-title: 'title: "Befehlsschnittstelle in Xamarin.Forms" description: "In diesem Artikel wird das Implementieren der „Command“-Eigenschaft mit Xamarin.Forms-Datenbindungen beschrieben.'
-description: 'Über die Befehlsschnittstelle kann jedoch ein alternativer Ansatz für das Implementieren von Befehlen verwendet werden, der für die MVVM-Architektur besser geeignet ist." ms.prod: xamarin ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Befehlsschnittstelle in Xamarin.Forms
+description: In diesem Artikel wird das Implementieren der „Command“-Eigenschaft mit Xamarin.Forms-Datenbindungen beschrieben. Über die Befehlsschnittstelle kann jedoch ein alternativer Ansatz für das Implementieren von Befehlen verwendet werden, der für die MVVM-Architektur besser geeignet ist.
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139723"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964661"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Befehlsschnittstelle in Xamarin.Forms
+# <a name="the-no-locxamarinforms-command-interface"></a>Befehlsschnittstelle in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -688,10 +688,6 @@ Die `execute`-Methode fügt das Zeichenfolgenargument zur `Entry`-Eigenschaft hi
 Die `canExecute`-Methode gibt `false` nur zurück, wenn das Argument das Dezimaltrennzeichen ist (d.h. es gibt an, dass das Dezimaltrennzeichen betätigt wird) und `Entry` bereits ein Dezimaltrennzeichen enthält.
 
 Alle `execute`-Methoden rufen die `RefreshCanExecutes`-Methode auf, die dann `ChangeCanExecute` für `DigitCommand` und `ClearCommand` aufruft. Dadurch wird sichergestellt, dass das Dezimaltrennzeichen und die RÜCKTASTE je nachdem, welche Ziffern eingegeben wurden, aktiviert oder deaktiviert werden.
-
-## <a name="adding-commands-to-existing-views"></a>Hinzufügen von Befehlen zu vorhandenen Ansichten
-
-Wenn Sie die Befehlsschnittstelle für Ansichten nutzen möchten, von denen diese nicht unterstützt wird, können Sie ein Xamarin.Forms-Verhalten verwenden, das ein Ereignis in einen Befehl konvertiert. Dieser Vorgang wird im Artikel [**Reusable EventToCommandBehavior (Wiederverwendbare EventToCommandBehavior-Klasse)** ](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) erläutert.
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchrone Befehle für Navigationsmenüs
 
