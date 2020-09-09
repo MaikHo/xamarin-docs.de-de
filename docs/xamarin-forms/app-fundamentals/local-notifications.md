@@ -1,6 +1,6 @@
 ---
-title: 'title: "Lokale Xamarin.Forms-Benachrichtigungen" description: "In diesem Artikel wird das Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms erläutert."'
-description: 'ms.prod: xamarin ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date: 10/10/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Lokale Xamarin.Forms-Benachrichtigungen
+description: In diesem Artikel wird das Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms erläutert.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: da867dd017ed50ccbc09f969891bb91011379d3f
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137591"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052746"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Lokale Benachrichtigungen in Xamarin.Forms
+# <a name="local-notifications-in-no-locxamarinforms"></a>Lokale Benachrichtigungen in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
@@ -50,7 +50,7 @@ public interface INotificationManager
 
 Diese Schnittstelle wird in jedem Plattformprojekt implementiert. Das `NotificationReceived`-Ereignis ermöglicht der Anwendung, eingehende Benachrichtigungen zu verarbeiten. Die `Initialize`-Methode sollte eine beliebige native Plattformlogik ausführen, die zum Vorbereiten des Benachrichtigungssystems erforderlich ist. Die `ScheduleNotification`-Methode sollte eine Benachrichtigung senden. Die `ReceiveNotification`-Methode sollte von der zugrunde liegenden Plattform aufgerufen werden, wenn eine Nachricht empfangen wird.
 
-## <a name="consume-the-interface-in-xamarinforms"></a>Verwenden der Schnittstelle in Xamarin.Forms
+## <a name="consume-the-interface-in-no-locxamarinforms"></a>Verwenden der Schnittstelle in Xamarin.Forms
 
 Nachdem eine Schnittstelle erstellt wurde, kann sie im freigegebenen Xamarin.Forms-Projekt verwendet werden, obwohl noch keine Plattformimplementierungen erstellt wurden. Die Beispielanwendung enthält eine `ContentPage` mit dem Namen **MainPage.xaml** mit folgendem Inhalt:
 
@@ -113,6 +113,16 @@ public partial class MainPage : ContentPage
 ```
 
 Der `MainPage`-Klassenkonstruktor verwendet den Xamarin.Forms-`DependencyService`, um eine plattformspezifische Instanz des `INotificationManager` abzurufen. Die `OnScheduleClicked`-Methode verwendet die `INotificationManager`-Instanz, um eine neue Benachrichtigung zu planen. Die `ShowNotification`-Methode wird vom Ereignishandler aufgerufen, der an das `NotificationReceived`-Ereignis angefügt ist, und fügt ein neues `Label` in die Seite ein, wenn das Ereignis aufgerufen wird.
+
+Der `NotificationReceived`-Ereignishandler wandelt seine Ereignisargumente in `NotificationEventArgs` um. Dieser Typ ist im freigegebenen Xamarin.Forms-Projekt definiert:
+
+```csharp
+public class NotificationEventArgs : EventArgs
+{
+    public string Title { get; set; }
+    public string Message { get; set; }
+}
+```
 
 Weitere Informationen über den Xamarin.Forms-`DependencyService` finden Sie unter [Xamarin.Forms-DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
 

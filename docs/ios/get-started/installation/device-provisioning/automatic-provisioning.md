@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
-ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
+ms.openlocfilehash: 32d9142fb74cba637982438a2aa984adb759d847
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88514628"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950715"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
@@ -25,7 +25,7 @@ Die automatische Bereitstellung steht in Visual Studio für Mac, Visual Studio 
 
 > [!NOTE]
 > Sie müssen außerdem über ein kostenpflichtiges Apple Developer-Konto verfügen, um dieses Feature nutzen zu können. Weitere Informationen zu Apple Developer-Konten finden Sie im Leitfaden [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md).
-> Wenn Sie über kein kostenpflichtiges Apple-Entwicklerkonto verfügen, finden Sie weitere Informationen im Leitfaden zur [kostenlosen Bereitstellung für Xamarin.iOS](~/ios/get-started/installation/device-provisioning/free-provisioning.md).
+> Lesen Sie den Leitfaden [Kostenlose Bereitstellung für Xamarin.iOS-Apps](~/ios/get-started/installation/device-provisioning/free-provisioning.md), wenn Sie kein kostenpflichtiges Apple Developer-Konto besitzen.
 
 > [!NOTE]
 > Bevor Sie beginnen, müssen Sie zunächst alle Lizenzvereinbarungen im [Apple Developer Portal](https://developer.apple.com/account/) oder in [App Store Connect](https://appstoreconnect.apple.com/) akzeptieren.

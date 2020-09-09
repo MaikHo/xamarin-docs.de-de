@@ -9,14 +9,14 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3599958a493dd4051064b5e7f54aa5901e6bf32c
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129310"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052759"
 ---
-# <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
+# <a name="get-started-with-no-locxamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
 Xamarin.Essentials stellt eine einzelne plattformübergreifende API bereit, die mit jeder iOS-, Android- und UWP-Anwendung kompatibel ist, auf die über freigegebenen Code zugegriffen werden kann, unabhängig davon, wie die Benutzeroberfläche erstellt wird. Weitere Informationen zu unterstützten Betriebssystemen finden Sie im [Leitfaden zur Plattform- und Featureunterstützung](platform-feature-support.md).
 
@@ -93,7 +93,7 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar und in jedem neuen Projekt in 
 
 6. Befolgen Sie die [Xamarin.Essentials-Anleitungen](index.md), mit denen Sie Codeausschnitte für jedes Feature kopieren und einfügen können.
 
-## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials: Plattformübergreifende APIs für Mobile Apps (Video)
+## <a name="no-locxamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials: Plattformübergreifende APIs für Mobile Apps (Video)
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 
