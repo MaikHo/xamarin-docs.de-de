@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939957"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964596"
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
@@ -42,8 +42,8 @@ Die Beispielanwendung zeigt eine `FocusEffect`-Klasse, die die Hintergrundfarbe 
 
 Ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement im `HomePage`-Element wird in jedem plattformspezifischen Projekt der `FocusEffect`-Klasse angepasst. Jede `FocusEffect`-Klasse wird von der `PlatformEffect`-Klasse für jede Plattform abgeleitet. Dies führt dazu, dass das `Entry`-Steuerelement mit einer plattformspezifischen Hintergrundfarbe gerendert wird, die sich ändert, wenn das Steuerelement ausgewählt wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![Fokuseffekt auf jeder Plattform](creating-images/screenshots-1.png)
-![Fokuseffekt auf jeder Plattform](creating-images/screenshots-2.png)
+![Fokuseffekt auf den verschiedenen Plattformen, Steuerfokus](creating-images/screenshots-1.png)
+![Fokuseffekt auf den verschiedenen Plattformen, kein Steuerfokus](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>Erstellen von Effect-Klassen auf verschiedenen Plattformen
 
@@ -239,7 +239,7 @@ public class FocusEffect : RoutingEffect
 
 Die `FocusEffect`-Klasse erstellt Unterklassen der [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)-Klasse, die einen plattformunabhängigen Effekt darstellt, der einen in der Regel plattformspezifischen inneren Effekt umschließt. Die `FocusEffect`-Klasse ruft den Basisklassenkonstruktor auf, der einen Parameter bestehend aus einer Verkettung des Namens der Auflösungsgruppe (mithilfe des [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)-Attributs der Effect-Klasse angegeben) übergibt, und die eindeutige ID, die mithilfe des [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attributs der Effect-Klasse angegeben wurde. Aus diesem Grund wird bei der Initialisierung von [`Entry`](xref:Xamarin.Forms.Entry) zur Laufzeit eine neue Instanz von `MyCompany.FocusEffect` zur [`Effects`](xref:Xamarin.Forms.Element.Effects)-Collection des Steuerelements hinzugefügt.
 
-Effekte können auch mithilfe eines Verhaltens oder angefügter Eigenschaften an Steuerelemente angefügt werden. Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe eines Verhaltens finden Sie unter [Reusable EffectBehavior (Wiederverwendbares Effektverhalten)](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe angefügter Eigenschaften finden Sie unter [Passing Parameters to an Effect (Übergeben von Parametern an einen Effekt)](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
+Effekte können auch mithilfe eines Verhaltens oder angefügter Eigenschaften an Steuerelemente angefügt werden. Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe eines Verhaltens finden Sie unter [Reusable EffectBehavior (Wiederverwendbares Effektverhalten)](~/xamarin-forms/app-fundamentals/behaviors/effect-behavior.md). Weitere Informationen zum Anfügen eines Effekts an ein Steuerelement mithilfe angefügter Eigenschaften finden Sie unter [Passing Parameters to an Effect (Übergeben von Parametern an einen Effekt)](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
 
 ## <a name="consuming-the-effect-in-cnum"></a>Nutzen des Effekts in C&num;
 
