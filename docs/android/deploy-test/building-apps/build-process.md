@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/06/2020
-ms.openlocfilehash: 202041614d6a5b632aba6e92a77869effc21bb4f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 09/11/2020
+ms.openlocfilehash: d4c8e9ba717602aa30cb736957da5a61d2a91130
+ms.sourcegitcommit: e4a51ca35887dd3e45016cf10111cee68d343fbe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568320"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027606"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -437,6 +437,16 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
 
+- **AndroidManifestPlaceholders:** Dies ist eine durch Semikolons getrennte Liste der Schlüssel-Wert-Ersatzpaare für *AndroidManifest.xml*, wobei jedes Paar das Format `key=value` aufweist.
+
+  Ein Eigenschaftswert von `assemblyName=$(AssemblyName)` definiert beispielsweise einen `${assemblyName}`-Platzhalter, der dann in *AndroidManifest.xml* angezeigt werden kann.
+
+  ```xml
+  <application android:label="${assemblyName}"
+  ```
+
+  Dies bietet eine Möglichkeit, Variablen aus dem Buildprozess in die Datei *AndroidManifest.xml* einzufügen.
+
 - **AndroidMultiDexClassListExtraArgs** &ndash; Eine Zeichenfolgeneigenschaft, die es Entwicklern ermöglicht, zusätzliche Argumente an `com.android.multidex.MainDexListBuilder` zu übergeben, wenn die `multidex.keep`-Datei generiert wird.
 
   Ein spezieller Fall ist, wenn bei der `dx`-Kompilierung der folgende Fehler angezeigt wird.
@@ -475,7 +485,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   Ab Xamarin.Android 10.1 verfügbar.
 
-- **AndroidR8JarPath** &ndash; Der Pfad zu `r8.jar` zur Verwendung mit dem r8 dex-Compiler und -Shrinker. Ist standardmäßig ein Pfad in der Xamarin.Android-Installation. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
+- **AndroidR8JarPath** &ndash; Der Pfad zu `r8.jar` zur Verwendung mit dem 8 dex-Compiler und -Shrinker. Ist standardmäßig ein Pfad in der Xamarin.Android-Installation. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
 
 - **AndroidSdkBuildToolsVersion** &ndash; Das build-tools-Paket des Android SDK enthält unter anderem die Tools **aapt** und **zipalign**. Mehrere verschiedene Versionen des build-tools-Pakets können gleichzeitig installiert werden. Das build-tools-Paket, das für die Paketerstellung ausgewählt wird, wird durch Überprüfen und Verwenden einer „bevorzugten“ build-tools-Version ermittelt, wenn diese vorhanden ist. Wenn die „bevorzugte“ Version *nicht* vorhanden ist, wird das Paket mit der höchsten installierten build-tools-Version verwendet.
 
@@ -487,8 +497,8 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   - `armeabi-v7a`
   - `x86`
-  - `arm64-v8a`: Xamarin.Android 5.1 oder höher wird benötigt.
-  - `x86_64`: Xamarin.Android 5.1 oder höher wird benötigt.
+  - `arm64-v8a`: Erfordert Xamarin.Android 5.1 oder höher.
+  - `x86_64`: Erfordert Xamarin.Android 5.1 oder höher.
 
 - **AndroidTlsProvider** &ndash; Ein Zeichenfolgenwert, der angibt, welcher TLS-Anbieter in einer Anwendung verwendet werden soll. Dabei sind folgende Werte möglich:
 
@@ -498,7 +508,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Dies entspricht der Einstellung **Standard** auf den Eigenschaftenseiten von Visual Studio.
 
-  - `btls`: [Boring SSL](https://boringssl.googlesource.com/boringssl) wird für die TLS-Kommunikation mit [HttpWebRequest](xref:System.Net.HttpWebRequest) verwendet.
+  - `btls`: Verwendet [BoringSSL](https://boringssl.googlesource.com/boringssl) für die TLS-Kommunikation mit [HttpWebRequest](xref:System.Net.HttpWebRequest).
 
     Dies ermöglicht die Verwendung von TLS 1.2 in allen Android-Versionen.
 
@@ -528,11 +538,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   Ab Xamarin.Android 10.1 verfügbar.
 
-- **AndroidUseLegacyVersionCode** &ndash; Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die versionCode-Berechnung auf das frühere Verhalten vor Xamarin.Android 8.2 zurückzusetzen. Dies sollte NUR für Entwickler verwendet werden, die an im Google Play Store vorhandenen Anwendungen arbeiten. Es wird dringend empfohlen, die neue `$(AndroidVersionCodePattern)`-Eigenschaft zu verwenden.
+- **AndroidUseLegacyVersionCode** &ndash; Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die versionCode-Berechnung auf das frühere Verhalten vor Xamarin.Android 8.2 zurückzusetzen. Dies sollte NUR für Entwickler verwendet werden, die an im Google Play Store vorhandenen Anwendungen arbeiten. Es wird dringend empfohlen, die neue `$(AndroidVersionCodePattern)`-Eigenschaft zu verwenden.
 
   Hinzugefügt in Xamarin.Android 8.2.
 
-- **AndroidUseManagedDesignTimeResourceGenerator** &ndash; Eine boolesche Eigenschaft, die die Entwurfszeitbuilds umschaltet, damit diese anstelle von `aapt` den Parser für verwaltete Ressourcen verwenden.
+- **AndroidUseManagedDesignTimeResourceGenerator** &ndash;: Eine boolesche Eigenschaft, die die Entwurfszeitbuilds umschaltet, damit diese anstelle von `aapt` den Parser für verwaltete Ressourcen verwenden.
 
   Hinzugefügt in Xamarin.Android 8.1.
 
@@ -553,13 +563,13 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   Vordefinierte Schlüsselelemente
 
-  - **abi** &ndash; Fügt die Ziel-ABI für die App ein.
+  - **abi**  &ndash; Fügt die Ziel-ABI für die App ein.
     - 2 &ndash; `armeabi-v7a`
     - 3 &ndash; `x86`
     - 4 &ndash; `arm64-v8a`
     - 5 &ndash; `x86_64`
 
-  - **minSDK** &ndash; Fügt den mindestens unterstützten SDK-Wert aus `AndroidManifest.xml` oder `11` ein, wenn kein solcher Wert definiert ist.
+  - **minSDK**  &ndash; Fügt den mindestens unterstützten SDK-Wert aus `AndroidManifest.xml` oder `11` ein, wenn kein solcher definiert ist.
 
   - **versionCode** &ndash; Verwendet den Versionscode direkt aus `Properties\AndroidManifest.xml`.
 
@@ -618,23 +628,23 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 - **LinkerDumpDependencies** &ndash; Eine boolesche Eigenschaft, die das Generieren von Linker-Abhängigkeitsdateien ermöglicht. Diese Datei kann als Eingabe für das [Illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md)-Tool verwendet werden.
 
-  Der Standardwert ist „False“.
+  Der Standardwert ist False.
 
-- **MandroidI18n** &ndash; Gibt die Internationalisierungsunterstützung an, die in der Anwendung enthalten ist, wie z. B. Sortierung und Sortieren von Tabellen. Der Wert ist eine durch Kommas oder Semikolons getrennte Liste von mindestens einem der folgenden Werte, für den nicht zwischen Groß-/Kleinschreibung unterschieden wird:
+- **MandroidI18n** &ndash; Gibt die Internationalisierungsunterstützung an, die in der Anwendung enthalten ist, wie z.B. Sortierung und Sortieren von Tabellen. Der Wert ist eine durch Kommas oder Semikolons getrennte Liste von mindestens einem der folgenden Werte, für den nicht zwischen Groß-/Kleinschreibung unterschieden wird:
 
-  - **None:** Keine zusätzlichen Codierungen werden einbezogen.
+  - **Keiner**: Keine zusätzliche Codierung einbeziehen.
 
-  - **All:** Alle verfügbaren Codierungen werden einbezogen.
+  - **All**: Alle verfügbaren Codierungen einschließen.
 
-  - **CJK:** Chinesische, japanische und koreanische Codierungen werden einbezogen, z. B. *Japanisch (EUC)* \[enc-jp, CP51932\], *Japanisch (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\], *Japanisch (JIS)* \[CP50220\], *Chinesisch vereinfacht (GB2312)* \[gb2312, CP936\], *Koreanisch (UHC)* \[ks\_c\_5601-1987, CP949\], *Koreanisch (EUC)* \[euc-kr, CP51949\], *Chinesisch traditionell (Big5)* \[big5, CP950\] und *Chinesisch vereinfacht (GB18030)* \[GB18030, CP54936\].
+  - **CJK**: Chinesische, japanische und koreanische Codierungen einschließen, z.B. *Japanisch (EUC)* \[enc-jp, CP51932\], *Japanisch (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\], *Japanisch (JIS)* \[CP50220\], *Chinesisch vereinfacht (GB2312)* \[gb2312, CP936\], *Koreanisch (UHC)* \[ks\_c\_5601-1987, CP949\], *Koreanisch (EUC)* \[euc-kr, CP51949\], *Chinesisch traditionell (Big5)* \[big5, CP950\] und *Chinesisch vereinfacht (GB18030)* \[GB18030, CP54936\].
 
-  - **MidEast:** Codierungen des Nahen Ostens werden einbezogen, z. B. *Türkisch (Windows)* \[iso-8859-9, CP1254\], *Hebräisch (Windows)* \[windows-1255, CP1255\], *Arabisch (Windows)* \[windows-1256, CP1256\], *Arabisch (ISO)* \[iso-8859-6, CP28596\], *Hebräisch (ISO)* \[iso-8859-8, CP28598\], *Lateinisch 5 (ISO)* \[iso-8859-9, CP28599\] und *Hebräisch (ISO-Alternative)* \[iso-8859-8, CP38598\].
+  - **MidEast**: Codierungen des Nahen Ostens einschließen, z.B. *Türkisch (Windows)* \[iso-8859-9, CP1254\], *Hebräisch (Windows)* \[windows-1255, CP1255\], *Arabisch (Windows)* \[windows-1256, CP1256\], *Arabisch (ISO)* \[iso-8859-6, CP28596\], *Hebräisch (ISO)* \[iso-8859-8, CP28598\], *Lateinisch 5 (ISO)* \[iso-8859-9, CP28599\] und *Hebräisch (Iso Alternative)* \[iso-8859-8, CP38598\].
 
-  - **Other:** Andere Codierungen werden einbezogen, z. B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telugu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
+  - **Other**: Andere Codierungen einschließen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Davenagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telegu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
 
-  - **Rare:** Seltene Codierungen werden einbezogen, z. B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\] *, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
+  - **Rare**: Seltene Codierungen einschließen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
 
-  - **West:** Westliche Codierungen werden einbezogen, z. B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
+  - **West**: Westliche Codierungen einschließen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
@@ -650,11 +660,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/platform/binding-java-library/index.md) verwendet:
 
-- **AndroidClassParser** &ndash; Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte:
+- **AndroidClassParser** &ndash; Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte sind:
 
-  - **class-parse:** `class-parse.exe` wird verwendet, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell.
+  - **class-parse**: Verwendet `class-parse.exe`, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell.
 
-  - **jar2xml:** `jar2xml.jar` wird verwendet, um Java-Reflektion zu verwenden, um Typen und Member aus einer `.jar`-Datei zu extrahieren.
+  - **jar2xml**: Verwendet `jar2xml.jar`, um Java-Reflektion zu verwenden, um Typen und Member aus einer `.jar`-Datei zu extrahieren.
 
   `class-parse` besitzt die folgenden Vorteile im Vergleich zu `jar2xml`:
 
@@ -668,11 +678,11 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 
   Der Standardwert wird sich in einem zukünftigen Release ändern.
 
-- **AndroidCodegenTarget** &ndash; Eine Zeichenfolgeneigenschaft, die die Codegenerierungsziel-ABI steuert. Mögliche Werte:
+- **AndroidCodegenTarget** &ndash; Eine Zeichenfolgeneigenschaft, die die Codegenerierungsziel-ABI steuert. Mögliche Werte sind:
 
   - **XamarinAndroid:** Verwendet die JNI-Bindungs-API, die seit Mono für Android 1.0 vorhanden ist. Bindungsassemblys, die mit Xamarin.Android 5.0 oder höher erstellt wurden, können nur unter Xamarin.Android 5.0 oder höher (API-/ABI-Erweiterungen) ausgeführt werden, aber die *Quelle* ist kompatibel mit früheren Produktversionen.
 
-  - **XAJavaInterop1:** Java.Interop wird für JNI-Aufrufe verwendet. Bindungsassemblys, die `XAJavaInterop1` verwenden, können nur mit Xamarin.Android 6.1 oder höher erstellt und ausgeführt werden. Xamarin.Android 6.1 oder höher bindet `Mono.Android.dll` mit diesem Wert.
+  - **XAJavaInterop1**: Verwendet Java.Interop für JNI-Aufrufe. Bindungsassemblys, die `XAJavaInterop1` verwenden, können nur mit Xamarin.Android 6.1 oder höher erstellt und ausgeführt werden. Xamarin.Android 6.1 oder höher bindet `Mono.Android.dll` mit diesem Wert.
 
     Die Vorteile von `XAJavaInterop1` umfassen Folgendes:
 
@@ -696,11 +706,11 @@ Ressourceneigenschaften steuern die Generierung der `Resource.designer.cs`-Datei
 
   Hinzugefügt in Xamarin.Android 9.1.
 
-- **AndroidExplicitCrunch** &ndash; Wenn Sie eine App mit einer sehr großen Anzahl lokaler zeichenbarer Ressourcen erstellen, kann ein anfänglicher Buildprozess (oder erneuter Buildprozess) mehrere Minuten dauern. Um den Buildprozess zu beschleunigen, versuchen Sie, diese Eigenschaft einzuschließen und auf `True` festzulegen. Wenn diese Eigenschaft festgelegt ist, verarbeitet der Buildprozess PNG-Dateien vorab.
+- **AndroidExplicitCrunch:** In Xamarin.Android 11.0 nicht länger unterstützt
 
-  Hinweis: Diese Option ist nicht mit der `$(AndroidUseAapt2)`-Option kompatibel. Wenn `$(AndroidUseAapt2)` aktiviert ist, wird diese Funktion deaktiviert. Wenn Sie dieses Feature weiterhin verwenden möchte, legen Sie `$(AndroidUseAapt2)` auf `False` fest.
+- **AndroidR8IgnoreWarnings:** Gibt automatisch die ProGuard-Regel &ndash; für `-ignorewarnings` an. Dadurch kann `r8` mit der DEX-Kompilierung fortfahren, auch wenn bestimmte Warnungen auftreten. Der Standardwert ist `True`, dieser kann jedoch auch auf `False` festgelegt werden, um ein strikteres Verhalten zu erzwingen. Weitere Informationen finden Sie im [ProGuard-Leitfaden](https://www.guardsquare.com/products/proguard/manual/usage).
 
-  **Experimentell**. Hinzugefügt in Xamarin.Android 7.0.
+  Ab Xamarin.Android 10.3 verfügbar.
 
 - **AndroidResgenExtraArgs** &ndash; Gibt zusätzliche Befehlszeilenoptionen an, die an den Befehl **aapt** übergeben werden, wenn Android-Objekte und -Ressourcen verarbeitet werden.
 
@@ -746,7 +756,7 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 - **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird.
 
-- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)** .
+- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
 
   In Xamarin.Android 10.0 und früher unterstützt diese Eigenschaft nur Klartextkennwörter.
 
@@ -773,7 +783,7 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 - **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
-- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:** .
+- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**.
 
   In Xamarin.Android 10.0 und früher unterstützt diese Eigenschaft nur Klartextkennwörter.
 

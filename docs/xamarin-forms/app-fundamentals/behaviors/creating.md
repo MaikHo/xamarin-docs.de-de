@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
+ms.lasthandoff: 09/10/2020
 ms.locfileid: "86933708"
 ---
-# <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
+# <a name="create-no-locxamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
@@ -59,7 +59,7 @@ Die Methode [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xa
 
 Das Verhalten kann dann verwendet werden, indem es an die [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Sammlung des entsprechenden Steuerelements angefügt wird.
 
-## <a name="creating-a-xamarinforms-behavior"></a>Erstellen eines Xamarin.Forms-Verhaltens
+## <a name="creating-a-no-locxamarinforms-behavior"></a>Erstellen eines Xamarin.Forms-Verhaltens
 
 Die Beispielanwendung veranschaulicht ein `NumericValidationBehavior`-Verhalten, das den Wert rot hervorhebt, der vom Benutzer in ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement eingegeben wird, sofern es sich nicht um einen `double`-Wert handelt. Das Verhalten wird im folgenden Codebeispiel veranschaulicht:
 
@@ -92,7 +92,7 @@ Das `NumericValidationBehavior`-Verhalten wird von der [`Behavior<T>`](xref:Xama
 > [!NOTE]
 > Xamarin.Forms legt nicht die Eigenschaft `BindingContext` von Verhalten fest, da Verhalten mit Formatvorlagen freigegeben und auf mehrere Steuerelemente angewendet werden können.
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Verarbeiten eines Xamarin.Forms-Verhaltens
+## <a name="consuming-a-no-locxamarinforms-behavior"></a>Verarbeiten eines Xamarin.Forms-Verhaltens
 
 Jedes Xamarin.Forms-Steuerelement verfügt über eine [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Sammlung, der wie im folgenden XAML-Codebeispiel veranschaulicht mindestens ein Verhalten hinzugefügt werden kann:
 
@@ -113,12 +113,12 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![Beispielanwendung mit Xamarin.Forms-Verhalten](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Beispielanwendung mit Xamarin.Forms-Verhalten")
+[![Beispielanwendung mit dem Xamarin.Forms -Verhalten](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox ":Beispielanwendung mit dem ::no-loc(Xamarin.Forms):::- Verhalten")
 
 > [!NOTE]
 > Verhalten werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Wenn ein Verhalten an ein inkompatibles Steuerelement angefügt wird, wird eine Ausnahme ausgelösten.
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Nutzen eines Xamarin.Forms-Verhaltens mit einer Formatvorlage
+### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>Nutzen eines Xamarin.Forms-Verhaltens mit einer Formatvorlage
 
 Verhalten können auch von einer expliziten oder impliziten Formatvorlage genutzt werden. Allerdings kann keine Formatvorlage erstellt werden, die die [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Eigenschaft eines Steuerelements festlegt, da die Eigenschaft schreibgeschützt ist. Die Lösung besteht darin, eine angefügte Eigenschaft zur Behavior-Klasse hinzuzufügen, die das Hinzufügen und Entfernen des Verhaltens steuert. Gehen Sie wie folgt vor:
 
