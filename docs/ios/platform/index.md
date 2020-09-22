@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: aca9227bc5c885000bffe858e0fc8b34d3724dfd
+ms.sourcegitcommit: 0c45e3f810947e3d43223aa01bf3e43a0defca65
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997149"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843498"
 ---
 # <a name="ios-platform-features-overview"></a>Übersicht über IOS-Platt Form Features
 
@@ -20,8 +20,9 @@ Auf dieser Seite werden die aktuellen IOS-Releases aufgeführt und einige der Ap
 
 ## <a name="ios-releases"></a>IOS-Releases
 
-| Release | Beschreibung |
+| Freigabe | BESCHREIBUNG |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Einführung in ios 14](~/ios/platform/ios14/index.md) | In diesem Dokument wird xamarin. IOS 14 beschrieben.|
 | [Einführung in iOS 13](~/ios/platform/ios13/index.md) | In diesem Dokument wird xamarin. IOS 13 beschrieben.|
 | [Einführung in iOS 12](~/ios/platform/introduction-to-ios12/index.md) | In diesem Dokument werden die IOS 12-Funktionen beschrieben, die zum Entwickeln von xamarin. IOS-Anwendungen verfügbar sind.|
 | [Einführung in iOS 11](~/ios/platform/introduction-to-ios11/index.md) | In diesem Dokument werden die neuen und aktualisierten Features in ios 11 und Xcode 9 beschrieben, z. b. Arkit, Core ml, Core NFC, Drag & Drop, MapKit, PDFKit, Sirikit und Vision. Es enthält Links zu Anleitungen, in denen beschrieben wird, wie diese Funktionen mit xamarin. IOS verwendet werden. |
