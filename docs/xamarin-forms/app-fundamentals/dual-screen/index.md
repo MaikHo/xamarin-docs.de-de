@@ -10,16 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2b0290daedab4a6e825d2bab4bea9889b4966645
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918301"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832279"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms-Features für Dual-Screen-Geräte
-
-![Vorabrelease der API](~/media/shared/preview.png)
 
 Dual-Screen-Geräte wie das Microsoft Surface Duo bieten neue Möglichkeiten für die Benutzeroberfläche Ihrer Anwendungen. Xamarin.Forms enthält die Klassen `TwoPaneView` und `DualScreenInfo`, damit Sie Apps für Dual-Screen-Geräte entwickeln können.
 

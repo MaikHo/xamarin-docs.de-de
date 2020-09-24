@@ -10,16 +10,14 @@ ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a76fb06c0ee54e90fa1bf0d44e419be40ee254
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 59ed6628479048beaaa5a379d495a14079181149
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918296"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832267"
 ---
 # <a name="no-locxamarinforms-dual-screen-triggers"></a>Xamarin.Forms-Trigger für Dual-Screen-Geräte
-
-![Vorabrelease der API](~/media/shared/preview.png)
 
 Der [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen)-Namespace enthält zwei Zustandstrigger:
 
