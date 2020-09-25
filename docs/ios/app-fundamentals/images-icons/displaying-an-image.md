@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: f9de09065d7c26c9ae98ef664be63599becb4da5
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: a7bc2b87e267e78d841217b7860e5d54c046b788
+ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997448"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248138"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in xamarin. IOS
 
@@ -100,9 +100,9 @@ Ab IOS 8 wurde eine spezielle **Vektor** Klasse zu **Bild Sätzen** hinzugefügt
 
 Wenn der Entwickler z. b. eine `MonkeyIcon.pdf` Datei als Vektor für einen Asset-Katalog mit einer Auflösung von 150px x 150px enthält, sind die folgenden bitmapassets in die abschließende App Bundle eingeschlossen, als Sie kompiliert wurde:
 
-- `MonkeyIcon@1x.png`-150px x 150px Auflösung.
-- `MonkeyIcon@2x.png`-300 px x 300 px Auflösung.
-- `MonkeyIcon@3x.png`-450 px x 450 px Auflösung.
+- `MonkeyIcon@1x.png` -150px x 150px Auflösung.
+- `MonkeyIcon@2x.png` -300 px x 300 px Auflösung.
+- `MonkeyIcon@3x.png` -450 px x 450 px Auflösung.
 
 Bei der Verwendung von PDF-Vektorbildern in Asset-Katalogen sollten folgende Aspekte berücksichtigt werden:
 
@@ -159,9 +159,9 @@ Da die- `RenderMode` Eigenschaft eines schreibgeschützt `UIImage` ist, verwende
 
 Es gibt drei mögliche Einstellungen für `UIImage.RenderMode` über die-Aufzählung `UIImageRenderingMode` :
 
-- `AlwaysOriginal`: Erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Bilddatei gerendert wird.
-- `AlwaysTemplate`-Erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit der angegebenen Farbe eingefärbt werden `Tint` .
-- `Automatic`: Rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise in einem `UIToolBar` , oder verwendet wird `UINavigationBar` , `UITabBar` `UISegmentControl` wird es als Vorlage behandelt.
+- `AlwaysOriginal` : Erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Bilddatei gerendert wird.
+- `AlwaysTemplate` -Erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit der angegebenen Farbe eingefärbt werden `Tint` .
+- `Automatic` : Rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise in einem `UIToolBar` , oder verwendet wird `UINavigationBar` , `UITabBar` `UISegmentControl` wird es als Vorlage behandelt.
 
 ## <a name="adding-new-assets-collections"></a>Neue Ressourcen Sammlungen werden hinzugefügt
 
@@ -215,7 +215,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 Weitere Informationen zu Symbolen und Bildern finden Sie in der Apple-Dokumentation zu [Richtlinien für benutzerdefiniertes Symbol und Bild Erstellung](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html).
 
-## <a name="displaying-an-image-in-a-storyboards"></a>Anzeigen eines Bilds in einem Storyboard
+## <a name="displaying-an-image-in-a-storyboard"></a>Anzeigen eines Bilds in einem Storyboard
 
 Nachdem ein Image einem xamarin. IOS-Projekt mit einem Asset-Katalog hinzugefügt wurde, kann es problemlos in einem Storyboard mithilfe von `UIImageView` im IOS-Designer angezeigt werden. Wenn z. b. das folgende bildasset hinzugefügt wurde:
 

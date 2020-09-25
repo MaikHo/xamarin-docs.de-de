@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 87ba471dad102059788695f3fe50633bc1a3de0c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 96f5dd638de17569d105e95c44a539e652b35986
+ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930181"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248125"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Plattformübergreifende APP-Fallstudie: Tasky
 
@@ -25,7 +25,7 @@ Es empfiehlt sich, eine von Road Map für das zu erstellen, was Sie tun möchten
 
  <a name="Requirements"></a>
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Der erste Schritt beim Entwerfen einer Anwendung ist die Identifizierung gewünschter Features. Hierbei kann es sich um allgemeine Ziele oder um detaillierte Anwendungsfälle handeln. Tasky hat unkomplizierte funktionale Anforderungen:
 
@@ -103,7 +103,7 @@ Die Verwendung von Namespaces zum Trennen der Ebenen erleichtert die Verwaltung 
 
  <a name="References"></a>
 
-### <a name="references"></a>References
+### <a name="references"></a>Referenzen
 
 Portable Klassenbibliotheken müssen auf mehreren Plattformen verwendet werden können, die jeweils über unterschiedliche Ebenen der Unterstützung für Plattform-und Frameworkfunktionen verfügen. Aus diesem Grund gibt es Einschränkungen hinsichtlich der Verwendung von Paketen und Framework-Bibliotheken. Xamarin. IOS unterstützt z. b. das c#- `dynamic` Schlüsselwort nicht, daher kann eine portable Klassenbibliothek kein Paket verwenden, das von dynamischem Code abhängt, auch wenn dieser Code auf Android funktioniert. Visual Studio für Mac verhindert, dass Sie inkompatible Pakete und Verweise hinzufügen, aber Sie sollten die Einschränkungen beachten, um später unerwartete Überraschungen zu vermeiden.
 
@@ -115,7 +115,7 @@ Hinweis: Sie sehen, dass Ihre Projekte auf Framework-Bibliotheken verweisen, die
 
 Die Datenschicht enthält den Code, der die physische Speicherung von Daten durchführt – ob eine Datenbank, Flatfiles oder ein anderer Mechanismus. Die Tasky-Datenschicht besteht aus zwei Teilen: der SQLite-NET-Bibliothek und dem benutzerdefinierten Code, der hinzugefügt wird.
 
-Tasky stützt sich auf das SQLite-net-nuget-Paket (veröffentlicht von Frank Kreuger) zum Einbetten von SQLite-NET-Code, der eine ORM-Datenbankschnittstelle (Object-Relational Mapping) bereitstellt. Die `TaskItemDatabase` -Klasse erbt von `SQLiteConnection` und fügt die erforderlichen Create-, Read-, Update-, DELETE-und Delete-Methoden (CRUD) hinzu, um Daten zu lesen und zu schreiben. Dabei handelt es sich um eine einfache Implementierung von generischen CRUD-Methoden, die in anderen Projekten wieder verwendet werden können.
+Tasky stützt sich auf das SQLite-net-nuget-Paket (veröffentlicht von Frank Krueger) zum Einbetten von SQLite-NET-Code, der eine ORM-Datenbankschnittstelle (Object-Relational Mapping) bereitstellt. Die `TaskItemDatabase` -Klasse erbt von `SQLiteConnection` und fügt die erforderlichen Create-, Read-, Update-, DELETE-und Delete-Methoden (CRUD) hinzu, um Daten zu lesen und zu schreiben. Dabei handelt es sich um eine einfache Implementierung von generischen CRUD-Methoden, die in anderen Projekten wieder verwendet werden können.
 
 Bei `TaskItemDatabase` handelt es sich um einen Singleton, der sicherstellt, dass der gesamte Zugriff auf dieselbe Instanz erfolgt. Eine Sperre wird verwendet, um den gleichzeitigen Zugriff von mehreren Threads zu verhindern.
 
@@ -233,7 +233,7 @@ In Tasky ist das Modell die `TaskItem` -Klasse und `TaskItemManager` implementie
 
 #### <a name="faade"></a>Hoff
 
- `TaskItemManager`umschließt die, `DAL.TaskItemRepository` um die Get-, Save-und Delete-Methoden bereitzustellen, auf die von der Anwendungs-und UI-Schicht verwiesen wird
+ `TaskItemManager` umschließt die, `DAL.TaskItemRepository` um die Get-, Save-und Delete-Methoden bereitzustellen, auf die von der Anwendungs-und UI-Schicht verwiesen wird
 
 Geschäftsregeln und Logik werden hier bei Bedarf eingefügt – beispielsweise alle Validierungsregeln, die erfüllt sein müssen, bevor ein Objekt gespeichert wird.
 
@@ -263,7 +263,7 @@ Die Klassen werden in diesem Diagramm dargestellt und in Ebenen gruppiert.
 
  <a name="References"></a>
 
-### <a name="references"></a>References
+### <a name="references"></a>Referenzen
 
 Die IOS-App verweist auf die plattformspezifischen SDK-Bibliotheken – z. b. Xamarin. IOS und MonoTouch. Dialog-1.
 
@@ -280,7 +280,7 @@ Die Anwendungsschicht und die Benutzeroberflächen Ebene werden in diesem Projek
 
 Die Anwendungsschicht enthält plattformspezifische Klassen, die erforderlich sind, um die Objekte, die von der PCL verfügbar gemacht werden, an die Benutzeroberfläche zu binden. Die IOS-spezifische Anwendung verfügt über zwei Klassen, die Ihnen helfen sollen, Aufgaben anzuzeigen:
 
-- **Editingsource** – diese Klasse wird verwendet, um Listen von Aufgaben an die Benutzeroberfläche zu binden. Da `MonoTouch.Dialog` für die Aufgabenliste verwendet wurde, muss dieses Hilfsprogramm implementiert werden, um die Funktion "Swipe" in zu löschen `UITableView` . Swipe-to-Delete ist in ios üblich, aber nicht in Android oder Windows Phone, sodass das IOS-spezifische Projekt das einzige ist, das es implementiert.
+- **Editingsource** – diese Klasse wird verwendet, um Listen von Aufgaben an die Benutzeroberfläche zu binden. Da `MonoTouch.Dialog` für die Aufgabenliste verwendet wurde, muss dieses Hilfsprogramm implementiert werden, um die Funktion "Swipe" in zu löschen  `UITableView` . Swipe-to-Delete ist in ios üblich, aber nicht in Android oder Windows Phone, sodass das IOS-spezifische Projekt das einzige ist, das es implementiert.
 - **Taskdialog** – diese Klasse wird verwendet, um eine einzelne Aufgabe an die Benutzeroberfläche zu binden. Er verwendet die `MonoTouch.Dialog` reflektionsapi, um das `TaskItem` Objekt mit einer Klasse zu "wrappen", die die richtigen Attribute enthält, damit der Eingabe Bildschirm ordnungsgemäß formatiert werden kann.
 
 Die `TaskDialog` -Klasse `MonoTouch.Dialog` erstellt mithilfe von Attributen einen Bildschirm, der auf den Eigenschaften einer Klasse basiert. Die-Klasse sieht wie folgt aus:
@@ -318,7 +318,7 @@ Beachten Sie, dass die `OnTap` Attribute einen Methodennamen erfordern – diese
 
 Die Benutzeroberflächen Ebene besteht aus den folgenden Klassen:
 
-1. **Appdelegat** – enthält Aufrufe der Darstellungs-API, um die in der Anwendung verwendeten Schriftarten und Farben zu formatieren. Tasky ist eine einfache Anwendung, sodass keine anderen Initialisierungs Aufgaben in ausgeführt werden `FinishedLaunching` .
+1. **Appdelegat** – enthält Aufrufe der Darstellungs-API, um die in der Anwendung verwendeten Schriftarten und Farben zu formatieren. Tasky ist eine einfache Anwendung, sodass keine anderen Initialisierungs Aufgaben in ausgeführt werden  `FinishedLaunching` .
 2. **Bildschirme** – Unterklassen von `UIViewController` , die die einzelnen Bildschirme und deren Verhalten definieren. Bildschirme verbinden die Benutzeroberfläche mit den Klassen der Anwendungsschicht und der allgemeinen API ( `TaskItemManager` ). In diesem Beispiel werden die Bildschirme im Code erstellt, aber Sie können mit der Interface Builder von Xcode oder dem Storyboard-Designer entworfen worden sein.
 3. **Bilder** – visuelle Elemente sind ein wichtiger Bestandteil jeder Anwendung. Tasky verfügt über Begrüßungsbildschirm-und Symbolbilder, die für IOS in regulärer und Retina-Auflösung bereitgestellt werden müssen.
 
@@ -332,7 +332,7 @@ Der Startbildschirm ist ein `MonoTouch.Dialog` Bildschirm, auf dem eine Liste de
 
 Die zwei Hauptmethoden im Zusammenhang mit der Anzeige und Interaktion mit der Aufgabenliste sind:
 
-1. **Populatetable** – verwendet die-Methode der Geschäfts Schicht `TaskManager.GetTasks` , um eine Auflistung von- `TaskItem` Objekten zur Anzeige abzurufen.
+1. **Populatetable** – verwendet die-Methode der Geschäfts Schicht  `TaskManager.GetTasks` , um eine Auflistung von-  `TaskItem` Objekten zur Anzeige abzurufen.
 2. **Ausgewählt** – wenn eine Zeile berührt wird, wird die Aufgabe in einem neuen Bildschirm angezeigt.
 
  <a name="Task_Details_Screen"></a>
@@ -349,9 +349,9 @@ Dieser Screenshot zeigt einen leeren Bildschirm, der das `Entry` Attribut zum Fe
 
 Die Funktionalität des Bildschirms " **Aufgaben Details** " (z. b. das Speichern oder Löschen einer Aufgabe) muss in der-Klasse implementiert werden `HomeScreen` , da hier die `MonoTouch.Dialog.BindingContext` erstellt wird. Die folgenden `HomeScreen` Methoden unterstützen den Bildschirm "Aufgaben Details":
 
-1. **Showtaskdetails** – erstellt eine `MonoTouch.Dialog.BindingContext` zum Rendering eines Bildschirms. Der Eingabe Bildschirm wird mithilfe von Reflektion erstellt, um Eigenschaftsnamen und-Typen aus der `TaskDialog` Klasse abzurufen. Zusätzliche Informationen, wie z. b. der Wasserzeichen Text für die Eingabefelder, werden mit Attributen der Eigenschaften implementiert.
-2. **Savetask** – auf diese Methode wird in der- `TaskDialog` Klasse über ein- `OnTap` Attribut verwiesen. Sie wird aufgerufen, wenn **Save** gedrückt wird, und verwendet einen `MonoTouch.Dialog.BindingContext` , um die vom Benutzer eingegebenen Daten abzurufen, bevor die Änderungen mithilfe von gespeichert werden `TaskItemManager` .
-3. **DeleteTask** – auf diese Methode wird in der- `TaskDialog` Klasse über ein- `OnTap` Attribut verwiesen. Es verwendet `TaskItemManager` , um die Daten mit dem Primärschlüssel (ID-Eigenschaft) zu löschen.
+1. **Showtaskdetails** – erstellt eine  `MonoTouch.Dialog.BindingContext` zum Rendering eines Bildschirms. Der Eingabe Bildschirm wird mithilfe von Reflektion erstellt, um Eigenschaftsnamen und-Typen aus der  `TaskDialog` Klasse abzurufen. Zusätzliche Informationen, wie z. b. der Wasserzeichen Text für die Eingabefelder, werden mit Attributen der Eigenschaften implementiert.
+2. **Savetask** – auf diese Methode wird in der-  `TaskDialog` Klasse über ein-  `OnTap` Attribut verwiesen. Sie wird aufgerufen, wenn  **Save** gedrückt wird, und verwendet einen  `MonoTouch.Dialog.BindingContext` , um die vom Benutzer eingegebenen Daten abzurufen, bevor die Änderungen mithilfe von gespeichert werden  `TaskItemManager` .
+3. **DeleteTask** – auf diese Methode wird in der-  `TaskDialog` Klasse über ein-  `OnTap` Attribut verwiesen. Es verwendet  `TaskItemManager` , um die Daten mit dem Primärschlüssel (ID-Eigenschaft) zu löschen.
 
  <a name="Android_App"></a>
 
@@ -367,7 +367,7 @@ Das Klassendiagramm mit Klassen, die nach Ebene gruppiert sind:
 
  <a name="References"></a>
 
-### <a name="references"></a>References
+### <a name="references"></a>Referenzen
 
 Das Android-App-Projekt muss auf die plattformspezifische xamarin. Android-Assembly verweisen, um auf Klassen aus dem Android SDK zuzugreifen.
 
@@ -426,7 +426,7 @@ Das folgende Diagramm zeigt die Klassen, die in Ebenen gruppiert sind:
 
  <a name="References"></a>
 
-### <a name="references"></a>References
+### <a name="references"></a>Referenzen
 
 Das plattformspezifische Projekt muss auf die erforderlichen plattformspezifischen Bibliotheken (z. b. `Microsoft.Phone` und `System.Windows` ) verweisen, um eine gültige Windows Phone Anwendung zu erstellen.
 
@@ -507,7 +507,7 @@ Es wurde der Prozess zum Entwerfen der Anwendungsschichten beschrieben und erlä
 
 Der Code kann von [GitHub](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)heruntergeladen werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Entwickeln plattformübergreifender Anwendungen (Hauptdokument)](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [Tasky Portable-Beispiel-app (GitHub)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
